@@ -5,6 +5,7 @@ import Home from "../pages/Home";
 import SignIn from "../pages/SignIn";
 import { Splash } from "../pages/Splash/Splash";
 import Settings from '../pages/Settings'
+import Activitys from "../pages/Activitys";
 
 const Stack = createNativeStackNavigator();
 
@@ -41,6 +42,12 @@ export default function Routes() {
                 name="Settings"
                 component={Settings}
                 options={{ headerShown: false }}
+            />
+
+            <Stack.Screen
+                name="Activitys"
+                component={Activitys}
+                options={{headerShown: false}}
             />
 
         </Stack.Navigator>
