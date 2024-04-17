@@ -1,9 +1,8 @@
-import { StyleSheet } from 'react-native'
-import styled from 'styled-components/native'
+import styled from 'styled-components/native';
 
 export const Container = styled.View`
     flex: 1;
-    background-color: #FFF;
+    background-color:${({theme}) => theme.COLORS.BACKGROUND};
 `;
 
 export const DockGlobal = styled.View`
@@ -14,13 +13,25 @@ export const DockGlobal = styled.View`
 `;
 
 export const DockServices = styled.View`
-    margin-top: 20px;
+    margin-top: 15px;
     align-items: flex-start;
     justify-content: space-between;
     flex-direction: row;
 
 `;
 
+export const ServiceText = styled.Text`
+    font-size: 23px;
+    font-family:"OpenSans_700Bold";
+    color: ${({theme}) => theme.COLORS.TEXT_PRIMARY};
+`
+
+export const ChildText = styled.Text`
+    font-size: 23px;
+    margin-top: 55px;
+    font-family:"OpenSans_700Bold";
+    color: ${({theme}) => theme.COLORS.TEXT_PRIMARY};
+`
 export const Services = styled.TouchableOpacity`
     height: 90px;
     width: 48%;
@@ -47,5 +58,6 @@ export const AddBtn = styled.TouchableOpacity`
     width: 70px;
     height: 70px;
     border-radius: 70px;
-    background-color: #E96181
+    background-color: ${({theme}) => theme.COLORS.PRIMARY};
+    
 `
