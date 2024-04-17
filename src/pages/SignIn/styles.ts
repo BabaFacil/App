@@ -1,11 +1,8 @@
-import { StyleSheet } from 'react-native'
-import styled from 'styled-components/native'
-
-
+import styled from 'styled-components/native';
 
 export const Container = styled.View`
     flex: 1;
-    background-color: '#fff';
+    background-color: ${({theme})=> theme.COLORS.BACKGROUND};
 `;
 
 export const ContainerLogo = styled.View`
@@ -19,7 +16,7 @@ export const InputStyle = styled.TextInput`
     width: 90%;
     border-width: 2px;
     border-radius: 15px;
-    border-color: #ff9fb6;
+    border-color: ${({theme})=> theme.COLORS.PRIMARY_800};
     padding: 15px;
     margin: 20px;
     align-items: center;
@@ -31,7 +28,7 @@ export const TitleModal = styled.Text`
     margin: 25px;
     font-family: "OpenSans_400Regular";
     font-size: 25px;
-    color: #E96181;
+    color: ${({theme})=> theme.COLORS.TEXT_SECONDARY};
 `;
 
 export const ModalContent = styled.View`

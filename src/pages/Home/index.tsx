@@ -1,15 +1,25 @@
-import { View, ScrollView, Text, StyleSheet, TouchableOpacity } from 'react-native'
-import React from 'react'
-import MenuBar from '../../components/MenuBar'
-import KidCards from '../../components/KidCards';
+import { OpenSans_400Regular, OpenSans_500Medium, OpenSans_700Bold, useFonts } from '@expo-google-fonts/open-sans';
 import { MaterialIcons } from '@expo/vector-icons';
-import * as S from './styles'
+import React from 'react';
+import { ScrollView, Text } from 'react-native';
+import KidCards from '../../components/KidCards';
+import MenuBar from '../../components/MenuBar';
+import * as S from './styles';
 
 export default function Home() {
+  let [fontsLoaded] = useFonts({
+    OpenSans_400Regular,
+    OpenSans_500Medium,
+    OpenSans_700Bold,
+  });
+  if (!fontsLoaded) {
+    return <Text>Loading...</Text>;
+  }
+  
   return (
     <S.Container>
       <S.DockGlobal>
-        <Text style={{ fontSize: 23 }}>Serviços</Text>
+        <S.ServiceText>Serviços</S.ServiceText>
         <S.DockServices>
           {/* Serviços */}
           <S.Services>
@@ -23,7 +33,7 @@ export default function Home() {
           </S.Services>
         </S.DockServices>
 
-        <Text style={{ fontSize: 23, marginTop: 60 }}>Crianças</Text>
+        <S.ChildText>Crianças</S.ChildText>
 
         <ScrollView contentContainerStyle={{ flexGrow: 1, paddingBottom: 320 }}>
           <S.DockKids>

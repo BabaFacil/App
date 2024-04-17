@@ -5,7 +5,7 @@ import React from 'react'
 
 interface defaultProps{
     nome: string;
-    idade: number;
+    idade: string;
     genero: string;
     img: string;
 }

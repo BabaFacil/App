@@ -20,17 +20,17 @@ export default function SignIn() {
         OpenSans_400Regular,
         OpenSans_700Bold,
     });
-    
+
     if (!fontsLoaded) {
         return <Text>Loading...</Text>;
     }
-    
+
 
     return (
         <GestureHandlerRootView style={{ flex: 1 }}>
             <S.Container >
                 <S.ContainerLogo>
-                    <Animatable.View animation='fadeInDown' delay={600} style={{flexDirection: 'row', justifyContent: "center", alignItems: 'center'}}>
+                    <Animatable.View animation='fadeInDown' delay={600} style={{ flexDirection: 'row', justifyContent: "center", alignItems: 'center' }}>
                         <Image
                             source={require('../../assets/imgs/logo-text2.png')}
                             style={{ width: '90%' }}
@@ -94,37 +94,35 @@ export default function SignIn() {
                     />
                 </Modalize>
 
-                <Modalize ref={modalRegisterRef} snapPoint={300} modalHeight={300}>
-                    <S.TitleModal>
-                        Cadastro
-                    </S.TitleModal>
+                    <Modalize ref={modalRegisterRef} snapPoint={300} modalHeight={300}>
+                        <S.TitleModal>
+                            Cadastro
+                        </S.TitleModal>
 
-                    <BtnC
-                        buttonText='Pai/Responsável'
-                        btnColor='#E96181'
-                        colorText='#fff'
-                        onPress={(event) => {
-                            event.persist();
-                            navigation.navigate('AccountCreation')
-                        }}
-                    />
-                    <BtnC
-                        buttonText='Babá'
-                        btnColor='transparent'
-                        colorText='#E96181'
-                        additionalStyles={{
-                            borderRadius: 10,
-                            borderWidth: 2,
-                            borderColor: '#E96181',
-                        }}
-                        onPress={(event) => {
-                            event.persist();
-                            navigation.navigate('AccountCreation')
-                        }}
-                    />
-                </Modalize>
-
-
+                        <BtnC
+                            buttonText='Pai/Responsável'
+                            btnColor='#E96181'
+                            colorText='#fff'
+                            onPress={(event) => {
+                                event.persist();
+                                navigation.navigate('AccountCreation')
+                            }}
+                        />
+                        <BtnC
+                            buttonText='Babá'
+                            btnColor='transparent'
+                            colorText='#E96181'
+                            additionalStyles={{
+                                borderRadius: 10,
+                                borderWidth: 2,
+                                borderColor: '#E96181',
+                            }}
+                            onPress={(event) => {
+                                event.persist();
+                                navigation.navigate('AccountCreation')
+                            }}
+                        />
+                    </Modalize>
             </S.Container>
         </GestureHandlerRootView>
     )
