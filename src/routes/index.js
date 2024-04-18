@@ -1,14 +1,12 @@
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
 import AccountCreation from "../pages/AccountCreation";
-import Home from "../pages/Home";
 import SignIn from "../pages/SignIn";
 import { Splash } from "../pages/Splash/Splash";
 import Settings from '../pages/Settings'
 import Activitys from "../pages/Activitys";
 import DarkModeSwitch from "../pages/DarkModeSwitch";
 import Home from "../pages/Home";
-import Settings from '../pages/Settings';
 const Stack = createNativeStackNavigator();
 
 export default function Routes() {
