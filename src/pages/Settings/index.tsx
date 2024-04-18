@@ -84,7 +84,7 @@ export default function Settings() {
 
 
                     <Card title="Conteudo e Interface">
-                        <S.ButtonNav>
+                        <S.ButtonNav  onPress={() => { navigation.navigate('DarkModeSwitch') }}>
                             <S.Nav>
                                 <Text>
                                     <Moon strokeWidth={1} fill={ICON_COLOR} color={ICON_COLOR} size={16} />
