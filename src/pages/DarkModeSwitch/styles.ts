@@ -1,7 +1,7 @@
 import styled from 'styled-components/native';
 
-export const BackgoundContainer = styled.View`
-    min-height: 100%;
+export const BackgoundContainer = styled.View`  
+    height: 100%;
     background-color: ${({theme}) => theme.COLORS.BACKGROUND};
 `
 
@@ -13,7 +13,6 @@ export const HeaderText = styled.Text`
 `
 
 export const Container = styled.ScrollView`
-
     margin-top: 10px;
 `;
 

@@ -1,19 +1,15 @@
-import React from 'react';
 import { StatusBar } from 'expo-status-bar';
+import React from 'react';
 
-import { ThemeProvider } from 'styled-components';
-import light from './src/theme/light';
-import dark from './src/theme/dark';
-
-import { NavigationContainer } from '@react-navigation/native'
-import Routes from './src/routes'
-
+import { NavigationContainer } from '@react-navigation/native';
+import Routes from './src/routes';
+import { ThemeProvider } from './src/theme/Theme';
 
 export default function App() {
   return (
-    <ThemeProvider theme={dark}>
+    <ThemeProvider>
       <NavigationContainer>
-        <StatusBar backgroundColor='transparent'/>
+        <StatusBar backgroundColor='transparent' />
         <Routes />
       </NavigationContainer>
     </ThemeProvider>
