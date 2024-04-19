@@ -12,7 +12,8 @@
     "@expo-google-fonts/montserrat": "^0.2.3",
     "@expo-google-fonts/open-sans": "^0.2.3",
     "@expo/vector-icons": "^14.0.0",
-    "@react-navigation/native": "^6.1.14",
+    "@react-native-async-storage/async-storage": "1.21.0",
+    "@react-navigation/native": "^6.1.17",
     "@react-navigation/native-stack": "^6.9.22",
     "expo": "~50.0.15",
     "expo-av": "~13.10.5",
@@ -28,16 +29,15 @@
     "react-native-safe-area-context": "4.8.2",
     "react-native-screens": "~3.29.0",
     "react-native-svg": "14.1.0",
-    "styled-components": "^5.3.6",
-    "@react-native-async-storage/async-storage": "1.21.0"
+    "styled-components": "^5.3.6"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0",
-    "typescript": "^5.4.5",
     "@types/react": "~18.2.45",
     "@types/styled-components": "^5.1.26",
     "@types/styled-components-react-native": "^5.2.0",
-    "babel-plugin-styled-components": "^2.1.4"
+    "babel-plugin-styled-components": "^2.1.4",
+    "typescript": "^5.4.5"
   },
   "private": true
 }

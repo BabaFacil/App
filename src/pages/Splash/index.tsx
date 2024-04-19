@@ -2,7 +2,7 @@ import { useNavigation } from '@react-navigation/native';
 import { ResizeMode, Video } from 'expo-av';
 import { StyleSheet } from 'react-native';
 import splash from '../../../assets/splash.mp4';
-export function Splash(){
+export default function Splash(){
     const navigation = useNavigation();
 
     function onPlaybackStatusUpdate(status){

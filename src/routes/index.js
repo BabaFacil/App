@@ -1,17 +1,12 @@
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
-import AccountCreation from "../pages/AccountCreation";
-import SignIn from "../pages/SignIn";
-import { Splash } from "../pages/Splash/Splash";
-import Settings from '../pages/Settings'
-import Activitys from "../pages/Activitys";
-import DarkModeSwitch from "../pages/DarkModeSwitch";
-import Home from "../pages/Home";
+import * as ROUTES from "../pages";
+
 const Stack = createNativeStackNavigator();
 
 export default function Routes() {
     return (
-        <Stack.Navigator >
+        <Stack.Navigator  >
             {/* <Stack.Screen
                 name="Welcome"
                 component={Welcome}
@@ -19,41 +14,41 @@ export default function Routes() {
             /> */}
             <Stack.Screen
                 name="Splash"
-                component={Splash}
+                component={ROUTES.Splash}
                 options={{ headerShown: false }}
             />
             <Stack.Screen
                 name="SignIn"
-                component={SignIn}
+                component={ROUTES.SignIn}
                 options={{ headerShown: false }}
             />
             <Stack.Screen
                 name="AccountCreation"
-                component={AccountCreation}
+                component={ROUTES.AccountCreation}
                 options={{ headerShown: false }}
             />
             <Stack.Screen
                 name='Home'
-                component={Home}
+                component={ROUTES.Home}
                 options={{ headerShown: false }}
             />
 
             <Stack.Screen
                 name="Settings"
-                component={Settings}
+                component={ROUTES.Settings}
                 options={{ headerShown: false }}
                 
             />
 
             <Stack.Screen
                 name="DarkModeSwitch"
-                component={DarkModeSwitch}
+                component={ROUTES.DarkModeSwitch}
                 options={{ headerShown: false }}
             />
 
             <Stack.Screen
                 name="Activitys"
-                component={Activitys}
+                component={ROUTES.Activitys}
                 options={{ headerShown: false }}
             />
 
