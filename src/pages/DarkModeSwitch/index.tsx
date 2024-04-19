@@ -33,7 +33,7 @@ export default function DarkModeSwitch() {
         <>
             <S.BackgoundContainer>
                 <View style={{ flexDirection: 'row', marginTop: 40, alignItems: "center" }}>
-                    <TouchableOpacity onPress={() => { navigation.navigate('Home') }}><ArrowLeft strokeWidth={1} style={{ marginLeft: 10 }} color={ICON_COLOR} size={28} /></TouchableOpacity>
+                    <TouchableOpacity onPress={() => { navigation.navigate('Settings') }}><ArrowLeft strokeWidth={1} style={{ marginLeft: 10 }} color={ICON_COLOR} size={28} /></TouchableOpacity>
 
                     {/* TODO: Fazer o texto aparecer quando o usuário rolar a página */}
                     <S.HeaderText >Modo escuro</S.HeaderText>
