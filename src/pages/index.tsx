@@ -1,5 +1,6 @@
 export { default as AccountCreation } from './AccountCreation'
 export { default as Activitys } from './Activitys'
+export { default as Chat} from './Chat'
 export { default as DarkModeSwitch } from './DarkModeSwitch'
 export { default as Home } from './Home'
 export { default as Settings } from './Settings'
