@@ -18,5 +18,5 @@ export const Container = styled.View`
     padding-right: 10px;
     padding-top: 10px;
 
-    background-color: ${({theme})=> theme.COLORS.BACKGROUND_900};
+    background-color: ${({theme})=> theme.COLORS.CARD_BACKGROUND};
 `

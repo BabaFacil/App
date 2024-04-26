@@ -4,6 +4,8 @@ export default {
         BACKGROUND_900: "#373E4E",
         BACKGROUND_800: "#9398A7",
         BACKGROUND_700: "#7A8194",
+
+        CARD_BACKGROUND: "#373E4E",
         
         PRIMARY: "#E96181",
         PRIMARY_900: "#B63C58",

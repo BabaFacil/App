@@ -1,9 +1,12 @@
 export default {
     COLORS:{
         BACKGROUND: "#FFFFFF",
-        BACKGROUND_900: "#F2F2F2",
-        BACKGROUND_800: "#F2F2F2",
-        BACKGROUND_700: "#F2F2F2",
+        BACKGROUND_900: "#383838",
+        BACKGROUND_800: "#878787",
+        BACKGROUND_700: "#BDBDBD",
+
+
+        CARD_BACKGROUND: "#F2F2F2",
 
         PRIMARY: "#E96181",
         PRIMARY_900: "#B63C58",

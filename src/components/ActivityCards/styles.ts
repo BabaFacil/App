@@ -8,8 +8,8 @@ export const Card = styled.View`
     flex-direction: row;
     margin-top: 20px;
     width: 100%;
-    border-color: ${({ theme }) => theme.COLORS.BACKGROUND_900};
-    background-color: ${({theme})=> theme.COLORS.BACKGROUND_900};
+    border-color: ${({ theme }) => theme.COLORS.CARD_BACKGROUND};
+    background-color: ${({theme})=> theme.COLORS.CARD_BACKGROUND};
     border-width: 1px;
     border-radius: 10px;
 `

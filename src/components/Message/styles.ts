@@ -30,7 +30,7 @@ export const LeftMessageContainer = styled.View`
 
 export const Text = styled.Text`
     font-family: ${({ theme }) => theme.FONT.MEDIUM};
-    color: ${({ theme }) => theme.COLORS.TEXT_PRIMARY};
+    color: #FFF;
 `
 
 export const HourText = styled.Text`
