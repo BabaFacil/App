@@ -1,12 +1,13 @@
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
 import * as ROUTES from "../pages";
+import { DefaultTheme } from "@react-navigation/native";
 
 const Stack = createNativeStackNavigator();
 
 export default function Routes() {
     return (
-        <Stack.Navigator  >
+        <Stack.Navigator screenOptions={{ detachPreviousScreen: true, presentation: "transparentModal"}} theme={DefaultTheme.colors.background}  >
             {/* <Stack.Screen
                 name="Welcome"
                 component={Welcome}
@@ -37,7 +38,7 @@ export default function Routes() {
                 name="Settings"
                 component={ROUTES.Settings}
                 options={{ headerShown: false }}
-                
+
             />
 
             <Stack.Screen
@@ -49,7 +50,15 @@ export default function Routes() {
             <Stack.Screen
                 name="Activitys"
                 component={ROUTES.Activitys}
+                options={{ headerShown: false,  }}
+                
+            />
+            <Stack.Screen
+                name="Chat"
+                component={ROUTES.Chat}
                 options={{ headerShown: false }}
+
+                
             />
 
         </Stack.Navigator>

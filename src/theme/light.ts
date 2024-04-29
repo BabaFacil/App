@@ -1,7 +1,12 @@
 export default {
     COLORS:{
         BACKGROUND: "#FFFFFF",
-        BACKGROUND_900: "#F2F2F2",
+        BACKGROUND_900: "#383838",
+        BACKGROUND_800: "#878787",
+        BACKGROUND_700: "#BDBDBD",
+
+
+        CARD_BACKGROUND: "#F2F2F2",
 
         PRIMARY: "#E96181",
         PRIMARY_900: "#B63C58",
@@ -18,5 +23,10 @@ export default {
 
         TEXT_PRIMARY: "#192124",
         TEXT_SECONDARY: "#E96181",
+    },
+    FONT:{
+        MEDIUM: "OpenSans_500Medium",
+        REGULAR: "OpenSans_400Regular",
+        BOLD:"OpenSans_700Bold",
     }
 } as const

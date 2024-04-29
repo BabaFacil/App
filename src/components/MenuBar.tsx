@@ -38,7 +38,7 @@ const MenuBar = ({ TelaAtiva }:defaultProps) => {
                 <Text style={{ fontSize: 12 }}>Atividade</Text>
             </TouchableOpacity>
 
-            <TouchableOpacity style={{ alignItems: 'center' }}>
+            <TouchableOpacity onPress={()=> navigation.navigate('Chat')} style={{ alignItems: 'center' }}>
                 <FontAwesome name="wechat" size={23} color={TelaAtiva == 'chat' ? '#E96181' : '#C8C8C8'} />
                 <Text style={{ fontSize: 12 }}>Chat</Text>
             </TouchableOpacity>
