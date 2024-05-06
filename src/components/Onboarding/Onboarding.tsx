@@ -1,16 +1,17 @@
 import React, { useRef, useState } from 'react'
 import { Animated, FlatList, View } from 'react-native'
 import { ThemeContext } from 'styled-components'
-
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import { Check, ChevronRight } from 'lucide-react-native'
 import { GestureHandlerRootView, TouchableOpacity } from 'react-native-gesture-handler'
 import Paginator from '../ui/Paginator'
 import OnBoardingItem from './OnboardingItem'
 import slides from './slides'
 import { Container } from './styles'
+import { useNavigation } from '@react-navigation/native';
 
 export default function Onboarding() {
-
+    const navigation = useNavigation();
     let COLORS = ThemeContext._currentValue.COLORS
 
     const [currentIndex, setCurrentIndex] = useState(0)
@@ -22,11 +23,17 @@ export default function Onboarding() {
     }).current;
 
 
-    const scrollTo = () => {
+    const scrollTo = async () => {
         if (currentIndex < slides.length - 1) {
             slidesRef.current.scrollToIndex({ index: currentIndex + 1 })
         } else {
-            //redirect here
+            try {
+                await AsyncStorage.setItem("@viewedonboarding", "true")
+                navigation.navigate('SignIn') 
+            } catch (e) {
+                console.log(e);
+                
+            }
         }
     }
     const scrollBackwards = () => {
@@ -55,7 +62,7 @@ export default function Onboarding() {
             </View>
             <View style={{ paddingHorizontal: 20, width: "100%", justifyContent: "space-between", flexDirection: "row" }}>
                 <GestureHandlerRootView>
-                    <TouchableOpacity onPress={scrollBackwards}>
+                    <TouchableOpacity style={{padding: 5}} onPress={scrollBackwards}>
                         <ChevronRight style={{
                             transform: [
                                 { rotate: '-180 deg' }
@@ -65,7 +72,7 @@ export default function Onboarding() {
                 </GestureHandlerRootView>
                 <Paginator data={slides} scrollX={scrollX} />
                 <GestureHandlerRootView>
-                    <TouchableOpacity onPress={scrollTo}>
+                    <TouchableOpacity style={{padding: 5}} onPress={scrollTo}>
                         {currentIndex < slides.length - 1 ? <ChevronRight color={COLORS.PRIMARY} size={32} /> : <Check color={COLORS.PRIMARY} size={32} />}
                     </TouchableOpacity>
                 </GestureHandlerRootView>
