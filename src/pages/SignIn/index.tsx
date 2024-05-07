@@ -41,15 +41,6 @@ export default function SignIn() {
                 </S.ContainerLogo>
 
                 <Animatable.View delay={600} animation='fadeInUp' style={{ flex: 1 }}>
-                    <Text onPress={async () => {
-                        try {
-                            await AsyncStorage.removeItem("@viewedonboarding")
-                            console.log("RESETADO");
-                            
-                        } catch (error) {
-
-                        }
-                    }}>RESETA</Text>
                     <BtnC
                         buttonText="Cadastrar"
                         btnColor='#E96181'
