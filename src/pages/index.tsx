@@ -1,3 +1,4 @@
+export {default as Welcome} from './Welcome'
 export { default as AccountCreation } from './AccountCreation'
 export { default as Activitys } from './Activitys'
 export { default as Chat} from './Chat'

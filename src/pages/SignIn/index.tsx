@@ -8,6 +8,7 @@ import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import { Modalize } from 'react-native-modalize';
 import BtnC from '../../components/CustomButton';
 import * as S from './styles';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 
 export default function SignIn() {
@@ -94,35 +95,35 @@ export default function SignIn() {
                     />
                 </Modalize>
 
-                    <Modalize ref={modalRegisterRef} snapPoint={300} modalHeight={300}>
-                        <S.TitleModal>
-                            Cadastro
-                        </S.TitleModal>
+                <Modalize ref={modalRegisterRef} snapPoint={300} modalHeight={300}>
+                    <S.TitleModal>
+                        Cadastro
+                    </S.TitleModal>
 
-                        <BtnC
-                            buttonText='Pai/Responsável'
-                            btnColor='#E96181'
-                            colorText='#fff'
-                            onPress={(event) => {
-                                event.persist();
-                                navigation.navigate('AccountCreation')
-                            }}
-                        />
-                        <BtnC
-                            buttonText='Babá'
-                            btnColor='transparent'
-                            colorText='#E96181'
-                            additionalStyles={{
-                                borderRadius: 10,
-                                borderWidth: 2,
-                                borderColor: '#E96181',
-                            }}
-                            onPress={(event) => {
-                                event.persist();
-                                navigation.navigate('AccountCreation')
-                            }}
-                        />
-                    </Modalize>
+                    <BtnC
+                        buttonText='Pai/Responsável'
+                        btnColor='#E96181'
+                        colorText='#fff'
+                        onPress={(event) => {
+                            event.persist();
+                            navigation.navigate('AccountCreation')
+                        }}
+                    />
+                    <BtnC
+                        buttonText='Babá'
+                        btnColor='transparent'
+                        colorText='#E96181'
+                        additionalStyles={{
+                            borderRadius: 10,
+                            borderWidth: 2,
+                            borderColor: '#E96181',
+                        }}
+                        onPress={(event) => {
+                            event.persist();
+                            navigation.navigate('AccountCreation')
+                        }}
+                    />
+                </Modalize>
             </S.Container>
         </GestureHandlerRootView>
     )
