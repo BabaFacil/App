@@ -5,8 +5,8 @@ import { ArrowLeft, BookA, ChevronRight, Flag, Info, LogOut, MessageSquareText, 
 import React from 'react';
 import { Text, TouchableOpacity, View } from 'react-native';
 import { ThemeContext } from 'styled-components';
-import Card from '../../components/Card';
-import MenuBar from '../../components/MenuBar';
+import Card from '@/components/Card';
+import MenuBar from '@/components/MenuBar';
 import * as S from './styles';
 
 

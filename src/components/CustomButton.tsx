@@ -2,7 +2,7 @@ import { Text, View, StyleSheet, TouchableOpacity } from 'react-native'
 import React, { Component } from 'react'
 
 interface defaultProps {
-    onPress: any
+    onPress: (event: any) => void
     btnColor: string
     colorText: string
     buttonText: string

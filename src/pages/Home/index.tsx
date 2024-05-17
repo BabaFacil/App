@@ -2,8 +2,8 @@ import { OpenSans_400Regular, OpenSans_500Medium, OpenSans_700Bold, useFonts } f
 import { MaterialIcons } from '@expo/vector-icons';
 import React from 'react';
 import { ScrollView, Text } from 'react-native';
-import KidCards from '../../components/KidCards';
-import MenuBar from '../../components/MenuBar';
+import KidCards from '@/components/KidCards';
+import MenuBar from '@/components/MenuBar';
 import * as S from './styles';
 
 export default function Home() {
