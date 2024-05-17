@@ -5,8 +5,8 @@ import React, { useContext } from 'react';
 import { Text, TouchableOpacity, View } from 'react-native';
 import { GestureHandlerRootView, Switch } from 'react-native-gesture-handler';
 import { ThemeContext as ThemeContextStyled } from 'styled-components';
-import Card from '../../components/Card';
-import { ThemeContext, ThemeType } from '../../theme/Theme';
+import Card from '@/components/Card';
+import { ThemeContext, ThemeType } from '@/theme/Theme';
 import * as S from './styles';
 
 // FIXME:  Warning: React has detected a change in the order of Hooks called.

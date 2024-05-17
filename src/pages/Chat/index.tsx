@@ -5,14 +5,14 @@ import { Image, KeyboardAvoidingView, Text, TouchableOpacity, View } from 'react
 import { ThemeContext } from 'styled-components'
 import * as S from './styles'
 import MenuBar from '../../components/MenuBar'
-import Message from '../../components/Message'
+import Message from '@/components/Message'
 import { GestureHandlerRootView, ScrollView } from 'react-native-gesture-handler'
 
 export default function Chat() {
     const navigation = useNavigation();
     let COLORS = ThemeContext._currentValue.COLORS
 
-    const nannyPic = require('../../assets/imgs/baba1.png')
+    const nannyPic = require('@/assets/imgs/baba1.png')
 
     return (<>
         <S.Container>
