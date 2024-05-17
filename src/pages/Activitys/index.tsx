@@ -1,8 +1,8 @@
 import React from 'react';
 import { Text, ScrollView } from 'react-native';
 import * as S from './styles';
-import ActivityCards from '../../components/ActivityCards/ActivityCards';
-import MenuBar from '../../components/MenuBar';
+import ActivityCards from '@/components/ActivityCards/ActivityCards';
+import MenuBar from '@/components/MenuBar';
 import { OpenSans_400Regular, OpenSans_500Medium, OpenSans_700Bold, useFonts } from '@expo-google-fonts/open-sans';
 
 export default function Activitys() {

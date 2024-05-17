@@ -1,14 +1,13 @@
 import React, { useRef } from 'react';
-import { Image, Text, TextInput, View } from 'react-native';
+import { Image, Text } from 'react-native';
 
+import BtnC from '@/components/CustomButton';
 import { OpenSans_400Regular, OpenSans_700Bold, useFonts } from '@expo-google-fonts/open-sans';
 import { useNavigation } from '@react-navigation/native';
 import * as Animatable from 'react-native-animatable';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import { Modalize } from 'react-native-modalize';
-import BtnC from '../../components/CustomButton';
 import * as S from './styles';
-import AsyncStorage from '@react-native-async-storage/async-storage';
 
 
 export default function SignIn() {

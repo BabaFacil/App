@@ -3,7 +3,7 @@ import { Ionicons } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
 import React from 'react';
 import { Image, Text, TextInput, TouchableOpacity, View } from 'react-native';
-import BtnC from '../../components/CustomButton';
+import BtnC from '@/components/CustomButton';
 import * as S from './styles';
 export default function AccountCreation() {
   const navigation = useNavigation();
