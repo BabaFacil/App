@@ -13,7 +13,7 @@ export default function Routes({ viewedOnBoard }) {
                 component={ROUTES.Splash}
                 options={{ headerShown: false }}
             />
-            
+
             <Stack.Screen
                 name="Welcome"
                 component={ROUTES.Welcome}
@@ -31,7 +31,11 @@ export default function Routes({ viewedOnBoard }) {
                 component={ROUTES.Home}
                 options={{ headerShown: false }}
             />
-            
+            <Stack.Screen
+                name='PreChat'
+                component={ROUTES.PreChat}
+                options={{ headerShown: false }}
+            />
             <Stack.Screen
                 name="AccountCreation"
                 component={ROUTES.AccountCreation}
