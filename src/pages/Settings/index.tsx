@@ -8,13 +8,12 @@ import { ThemeContext } from 'styled-components';
 import Card from '@/components/Card';
 import MenuBar from '@/components/MenuBar';
 import * as S from './styles';
+import { useTheme } from 'styled-components/native';
 
 
 export default function Settings() {
     const navigation = useNavigation();
-    
-    let ICON_COLOR = ThemeContext._currentValue.COLORS.ICON
-    let STROKE_ICON = ThemeContext._currentValue.COLORS.ICON_STROKE
+    const theme = useTheme()
 
     let [fontsLoaded] = useFonts({
         OpenSans_400Regular,
@@ -31,7 +30,7 @@ export default function Settings() {
         <>
             <S.BackgoundContainer>
                 <View style={{ flexDirection: 'row', marginTop: 40, alignItems: "center" }}>
-                    <TouchableOpacity onPress={() => { navigation.navigate('Home') }}><ArrowLeft strokeWidth={1} style={{ marginLeft: 10 }} color={ICON_COLOR} size={28} /></TouchableOpacity>
+                    <TouchableOpacity onPress={() => { navigation.navigate('Home' as never) }}><ArrowLeft strokeWidth={1} style={{ marginLeft: 10 }} color={theme.COLORS.ICON} size={28} /></TouchableOpacity>
 
                     {/* TODO: Fazer o texto aparecer quando o usuário rolar a página */}
                     <S.HeaderText >Configurações e Privacidade</S.HeaderText>
@@ -41,10 +40,10 @@ export default function Settings() {
                     <S.PrincipalText >Configurações e Privacidade</S.PrincipalText>
                     <Card title="Conta">
 
-                        <S.ButtonNav onPress={() => { navigation.navigate('Home') }}>
+                        <S.ButtonNav onPress={() => { navigation.navigate('Home' as never) }}>
                             <S.Nav>
                                 <Text>
-                                    <Ionicons name="person-sharp" color={ICON_COLOR} size={16} />
+                                    <Ionicons name="person-sharp" color={theme.COLORS.ICON} size={16} />
                                 </Text>
                                 <S.Text>Perfil</S.Text>
                             </S.Nav>
@@ -54,7 +53,7 @@ export default function Settings() {
                         <S.ButtonNav>
                             <S.Nav>
                                 <Text>
-                                    <MaterialIcons name="lock" color={ICON_COLOR} size={16} />
+                                    <MaterialIcons name="lock" color={theme.COLORS.ICON} size={16} />
                                 </Text>
                                 <S.Text>Privacidade</S.Text>
                             </S.Nav>
@@ -64,7 +63,7 @@ export default function Settings() {
                         <S.ButtonNav>
                             <S.Nav>
                                 <Text>
-                                    <Shield fill={ICON_COLOR} color={ICON_COLOR} size={16} />
+                                    <Shield fill={theme.COLORS.ICON} color={theme.COLORS.ICON} size={16} />
                                 </Text>
                                 <S.Text>Segurança</S.Text>
                             </S.Nav>
@@ -74,7 +73,7 @@ export default function Settings() {
                         <S.ButtonNav>
                             <S.Nav>
                                 <Text>
-                                    <PieChart color={ICON_COLOR} size={16} />
+                                    <PieChart color={theme.COLORS.ICON} size={16} />
                                 </Text>
                                 <S.Text>Estatiscas</S.Text>
                             </S.Nav>
@@ -84,10 +83,10 @@ export default function Settings() {
 
 
                     <Card title="Conteudo e Interface">
-                        <S.ButtonNav  onPress={() => { navigation.navigate('DarkModeSwitch') }}>
+                        <S.ButtonNav  onPress={() => { navigation.navigate('DarkModeSwitch' as never) }}>
                             <S.Nav>
                                 <Text>
-                                    <Moon strokeWidth={1} fill={ICON_COLOR} color={ICON_COLOR} size={16} />
+                                    <Moon strokeWidth={1} fill={theme.COLORS.ICON} color={theme.COLORS.ICON} size={16} />
                                 </Text>
                                 <S.Text>Modo escuro</S.Text>
                             </S.Nav>
@@ -97,7 +96,7 @@ export default function Settings() {
                         <S.ButtonNav>
                             <S.Nav>
                                 <Text>
-                                    <BookA strokeWidth={1.5} fill={ICON_COLOR} color={STROKE_ICON} size={16} />
+                                    <BookA strokeWidth={1.5} fill={theme.COLORS.ICON} color={theme.COLORS.ICON_STROKE} size={16} />
                                 </Text>
                                 <S.Text>Idioma</S.Text>
                             </S.Nav>
@@ -109,7 +108,7 @@ export default function Settings() {
                         <S.ButtonNav>
                             <S.Nav>
                                 <Text>
-                                    <MessageSquareText strokeWidth={1} fill={ICON_COLOR} color={STROKE_ICON} size={16} />
+                                    <MessageSquareText strokeWidth={1} fill={theme.COLORS.ICON} color={theme.COLORS.ICON_STROKE} size={16} />
                                 </Text>
                                 <S.Text>Suporte</S.Text>
                             </S.Nav>
@@ -119,7 +118,7 @@ export default function Settings() {
                         <S.ButtonNav>
                             <S.Nav>
                                 <Text>
-                                    <Scale strokeWidth={1.5} fill={ICON_COLOR} color={ICON_COLOR} size={16} />
+                                    <Scale strokeWidth={1.5} fill={theme.COLORS.ICON} color={theme.COLORS.ICON} size={16} />
                                 </Text>
                                 <S.Text>Termos e Condições</S.Text>
                             </S.Nav>
@@ -129,7 +128,7 @@ export default function Settings() {
                         <S.ButtonNav>
                             <S.Nav>
                                 <Text>
-                                    <Flag strokeWidth={1} fill={ICON_COLOR} color={ICON_COLOR} size={16} />
+                                    <Flag strokeWidth={1} fill={theme.COLORS.ICON} color={theme.COLORS.ICON} size={16} />
                                 </Text>
                                 <S.Text>Reporte um problema</S.Text>
                             </S.Nav>
@@ -139,7 +138,7 @@ export default function Settings() {
                         <S.ButtonNav>
                             <S.Nav>
                                 <Text>
-                                    <Info strokeWidth={2} fill={ICON_COLOR} color={STROKE_ICON} size={16} />
+                                    <Info strokeWidth={2} fill={theme.COLORS.ICON} color={theme.COLORS.ICON_STROKE} size={16} />
                                 </Text>
                                 <S.Text>Sobre nós</S.Text>
                             </S.Nav>
@@ -152,11 +151,11 @@ export default function Settings() {
                         <S.ButtonNav>
                             <S.Nav>
                                 <Text>
-                                    <Ionicons name="person-sharp" color={ICON_COLOR} size={16} />
+                                    <Ionicons name="person-sharp" color={theme.COLORS.ICON} size={16} />
                                 </Text>
                                 <S.Text>Log-out</S.Text>
                             </S.Nav>
-                            <Text><LogOut strokeWidth={2} color={ICON_COLOR} size={16} /></Text>
+                            <Text><LogOut strokeWidth={2} color={theme.COLORS.ICON} size={16} /></Text>
                         </S.ButtonNav>
                     </Card>
 

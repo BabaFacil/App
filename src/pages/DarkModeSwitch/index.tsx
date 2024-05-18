@@ -8,12 +8,13 @@ import { ThemeContext as ThemeContextStyled } from 'styled-components';
 import Card from '@/components/Card';
 import { ThemeContext, ThemeType } from '@/theme/Theme';
 import * as S from './styles';
+import { useTheme } from 'styled-components/native';
 
 // FIXME:  Warning: React has detected a change in the order of Hooks called.
 //         This will lead to bugs and errors if not fixed.
 export default function DarkModeSwitch() {
     const navigation = useNavigation();
-    let ICON_COLOR = ThemeContextStyled._currentValue.COLORS.ICON
+    const themeUse = useTheme()
 
     let [fontsLoaded] = useFonts({
         OpenSans_400Regular,
@@ -33,7 +34,7 @@ export default function DarkModeSwitch() {
         <>
             <S.BackgoundContainer>
                 <View style={{ flexDirection: 'row', marginTop: 40, alignItems: "center" }}>
-                    <TouchableOpacity onPress={() => { navigation.navigate('Settings') }}><ArrowLeft strokeWidth={1} style={{ marginLeft: 10 }} color={ICON_COLOR} size={28} /></TouchableOpacity>
+                    <TouchableOpacity onPress={() => { navigation.navigate('Settings' as never) }}><ArrowLeft strokeWidth={1} style={{ marginLeft: 10 }} color={themeUse.COLORS.ICON} size={28} /></TouchableOpacity>
 
                     {/* TODO: Fazer o texto aparecer quando o usuário rolar a página */}
                     <S.HeaderText >Modo escuro</S.HeaderText>

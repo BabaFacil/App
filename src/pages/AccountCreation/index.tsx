@@ -20,7 +20,7 @@ export default function AccountCreation() {
   return (
     
     <S.Container>
-      <S.Return onPress={() => { navigation.navigate('SignIn') }}>
+      <S.Return onPress={() => { navigation.navigate('SignIn' as never) }}>
         <Ionicons name="arrow-back" size={33} color="black" />
         <Text style={{ fontSize: 17 }}> Voltar</Text>
       </S.Return>
@@ -36,7 +36,7 @@ export default function AccountCreation() {
           buttonText='Cadastrar'
           btnColor='#E96181'
           colorText='#FFF'
-          onPress={() => { navigation.navigate('Home') }}
+          onPress={() => { navigation.navigate('Home' as never) }}
         // onPress={() => { modalRegisterRef.current?.open(); }}
         />
       </S.Form>

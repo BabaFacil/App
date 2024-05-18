@@ -7,28 +7,28 @@ import * as S from './styles'
 import MenuBar from '../../components/MenuBar'
 import Message from '@/components/Message'
 import { GestureHandlerRootView, ScrollView } from 'react-native-gesture-handler'
+import { useTheme } from 'styled-components/native'
 
 export default function Chat() {
     const navigation = useNavigation();
-    let COLORS = ThemeContext._currentValue.COLORS
-
+    let theme = useTheme()
     const nannyPic = require('@/assets/imgs/baba1.png')
 
     return (<>
         <S.Container>
             <View style={{ flex: 1, justifyContent: "space-between", flexDirection: 'column', marginTop: 40 }}>
                 <S.Header>
-                    <TouchableOpacity onPress={() => { navigation.goBack() }}><ArrowLeft strokeWidth={1} color={COLORS.TEXT_PRIMARY} size={28} /></TouchableOpacity>
+                    <TouchableOpacity onPress={() => { navigation.goBack() }}><ArrowLeft strokeWidth={1} color={theme.COLORS.TEXT_PRIMARY} size={28} /></TouchableOpacity>
                     <View style={{ flexDirection: 'row', alignItems: "center" }}>
                         <Image source={nannyPic} style={{ height: 32, width: 32, borderRadius: 90 }} />
                         <S.Name>Adriana Grande</S.Name>
                     </View>
                     <View style={{ flexDirection: 'row', alignItems: "center" }}>
                         <TouchableOpacity>
-                            <Video color={COLORS.TEXT_PRIMARY} />
+                            <Video color={theme.COLORS.TEXT_PRIMARY} />
                         </TouchableOpacity>
                         <TouchableOpacity style={{ marginLeft: 15 }}>
-                            <Phone color={COLORS.TEXT_PRIMARY} />
+                            <Phone color={theme.COLORS.TEXT_PRIMARY} />
                         </TouchableOpacity>
                     </View>
                 </S.Header>
@@ -46,11 +46,11 @@ export default function Chat() {
                 {/* Input Message */}
                 <S.MessageInputContainer>
                     <S.SendImageContainer>
-                        <Camera color={COLORS.BACKGROUND} />
+                        <Camera color={theme.COLORS.BACKGROUND} />
                     </S.SendImageContainer>
-                    <S.MessageInput multiline={true} placeholder='Message' placeholderTextColor={COLORS.BACKGROUND_800} />
+                    <S.MessageInput multiline={true} placeholder='Message' placeholderTextColor={theme.COLORS.BACKGROUND_800} />
                     <TouchableOpacity >
-                        <SendHorizontal color={COLORS.BACKGROUND_800} />
+                        <SendHorizontal color={theme.COLORS.BACKGROUND_800} />
                     </TouchableOpacity>
                 </S.MessageInputContainer>
             </View>
