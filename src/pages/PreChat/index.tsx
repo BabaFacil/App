@@ -7,9 +7,10 @@ import { ThemeContext } from 'styled-components'
 import MenuBar from '@/components/MenuBar'
 import PreChatCard from '@/components/PreChatCard'
 import * as S from './styles'
+import { useTheme } from 'styled-components/native'
 
 export default function PreChat() {
-    let COLORS = ThemeContext._currentValue.COLORS
+    const theme = useTheme()
 
     let [fontsLoaded] = useFonts({
         OpenSans_400Regular,
@@ -81,7 +82,7 @@ export default function PreChat() {
                         <View style={{ flexDirection: 'row', alignItems: "center" }}>
                             <GestureHandlerRootView>
                                 <TouchableOpacity>
-                                    <Search color={COLORS.TEXT_PRIMARY} />
+                                    <Search color={theme.COLORS.TEXT_PRIMARY} />
                                 </TouchableOpacity>
                             </GestureHandlerRootView>
                         </View>

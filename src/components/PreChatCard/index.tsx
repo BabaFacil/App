@@ -2,6 +2,7 @@ import { Check, CheckCheck } from 'lucide-react-native'
 import { Image, Text, View } from 'react-native'
 import { ThemeContext } from 'styled-components/native'
 import * as S from './styles'
+import { useTheme } from 'styled-components/native';
 
 interface defaultProps {
     name: string,
@@ -15,7 +16,7 @@ interface defaultProps {
 }
 
 export default function PreChatCard({ name, lastMessage, lastMassageDate, photo, newMsgCount, isNewMessage, sent, isSender }: defaultProps) {
-    let COLOR = ThemeContext._currentValue.COLORS
+    const theme = useTheme()
     const imagePaths = {
         'baba1': require('../../assets/imgs/baba1.png'),
         'baba2': require('../../assets/imgs/baba2.png'),
@@ -35,7 +36,7 @@ export default function PreChatCard({ name, lastMessage, lastMassageDate, photo,
                         <View style={{ flexDirection: "row", alignItems: 'center' }}>
                             {isSender ?
                                 <View style={{ marginRight: 2 }}>
-                                    {sent ? <CheckCheck size={16} color={COLOR.PRIMARY} /> : <Check size={16} color={COLOR.ICON} />}
+                                    {sent ? <CheckCheck size={16} color={theme.COLORS.PRIMARY} /> : <Check size={16} color={theme.COLORS.ICON} />}
                                 </View>
                                 : []
                             }

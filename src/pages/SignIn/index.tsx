@@ -89,7 +89,7 @@ export default function SignIn() {
                         onPress={(event) => {
                             console.log(event);
                             event.persist();
-                            navigation.navigate('Home')
+                            navigation.navigate('Home' as never)
                         }}
                     />
                 </Modalize>
@@ -105,7 +105,7 @@ export default function SignIn() {
                         colorText='#fff'
                         onPress={(event) => {
                             event.persist();
-                            navigation.navigate('AccountCreation')
+                            navigation.navigate('AccountCreation' as never)
                         }}
                     />
                     <BtnC
@@ -119,7 +119,7 @@ export default function SignIn() {
                         }}
                         onPress={(event) => {
                             event.persist();
-                            navigation.navigate('AccountCreation')
+                            navigation.navigate('AccountCreation' as never)
                         }}
                     />
                 </Modalize>
