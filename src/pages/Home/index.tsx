@@ -7,6 +7,7 @@ import { ScrollView, Text, TouchableOpacity } from 'react-native';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import { Modalize } from 'react-native-modalize';
 import * as S from './styles';
+import { useNavigation } from '@react-navigation/native';
 
 export default function Home() {
 
