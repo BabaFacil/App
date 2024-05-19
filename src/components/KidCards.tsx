@@ -4,13 +4,14 @@ import { useFonts, OpenSans_400Regular, OpenSans_700Bold } from '@expo-google-fo
 import React from 'react'
 
 interface defaultProps{
+    onPress: (e:any) => void;
     nome: string;
     idade: string;
     genero: string;
     img: string;
 }
 
-const KidCards = ({ nome, idade, genero, img }: defaultProps) => {
+const KidCards = ({onPress, nome, idade, genero, img }: defaultProps) => {
 
     let [fontsLoaded] = useFonts({
         OpenSans_400Regular,
@@ -32,6 +33,9 @@ const KidCards = ({ nome, idade, genero, img }: defaultProps) => {
             marginTop: 10,
             backgroundColor: '#F1F1F130',
             borderRadius: 10,
+            marginLeft:'2%',
+            marginRight:'2%',
+             width: '46%' 
         },
         infoKids: {
             fontFamily: 'OpenSans_400Regular',
@@ -47,7 +51,7 @@ const KidCards = ({ nome, idade, genero, img }: defaultProps) => {
         }
     })
     return (
-        <View style={styles.kids}>
+        <TouchableOpacity onPress={onPress} style={styles.kids}>
             <Image
                 source={imagePaths[img]}
                 style={{ height: 240, width: '100%', borderRadius: 10 }}
@@ -56,7 +60,7 @@ const KidCards = ({ nome, idade, genero, img }: defaultProps) => {
             <View style={styles.infoKids}>
                 <Text style={{ color: '#fff', fontWeight: 'bold' }}>{nome}, {idade} anos</Text>
             </View>
-        </View>
+        </TouchableOpacity>
     )
 }
 
