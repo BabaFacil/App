@@ -5,8 +5,11 @@ import { ScrollView, Text } from 'react-native';
 import KidCards from '@/components/KidCards';
 import MenuBar from '@/components/MenuBar';
 import * as S from './styles';
+import { useNavigation } from '@react-navigation/native';
 
 export default function Home() {
+  const navigation = useNavigation();
+
   let [fontsLoaded] = useFonts({
     OpenSans_400Regular,
     OpenSans_500Medium,
@@ -49,7 +52,7 @@ export default function Home() {
           </S.DockKids>
         </ScrollView>
       </S.DockGlobal>
-      <S.AddBtn>
+      <S.AddBtn onPress={() => {navigation.navigate('RegisterChild' as never)}}>
         <Text style={{ fontSize: 25, color: '#fff' }}>+</Text>
       </S.AddBtn>
       <MenuBar TelaAtiva={'home'} />
