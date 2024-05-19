@@ -40,7 +40,7 @@ export default function Settings() {
                     <S.PrincipalText >Configurações e Privacidade</S.PrincipalText>
                     <Card title="Conta">
 
-                        <S.ButtonNav onPress={() => { navigation.navigate('Home' as never) }}>
+                        <S.ButtonNav onPress={() => { navigation.navigate('AccontInfo' as never) }}>
                             <S.Nav>
                                 <Text>
                                     <Ionicons name="person-sharp" color={theme.COLORS.ICON} size={16} />
