@@ -30,7 +30,6 @@ const KidCards = ({ nome, idade, genero, img }: defaultProps) => {
         kids: {
             height: 240,
             marginTop: 10,
-            width: '48%',
             backgroundColor: '#F1F1F130',
             borderRadius: 10,
         },
@@ -48,7 +47,7 @@ const KidCards = ({ nome, idade, genero, img }: defaultProps) => {
         }
     })
     return (
-        <TouchableOpacity style={styles.kids}>
+        <View style={styles.kids}>
             <Image
                 source={imagePaths[img]}
                 style={{ height: 240, width: '100%', borderRadius: 10 }}
@@ -57,7 +56,7 @@ const KidCards = ({ nome, idade, genero, img }: defaultProps) => {
             <View style={styles.infoKids}>
                 <Text style={{ color: '#fff', fontWeight: 'bold' }}>{nome}, {idade} anos</Text>
             </View>
-        </TouchableOpacity>
+        </View>
     )
 }
 

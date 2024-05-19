@@ -8,7 +8,7 @@ const Stack = createNativeStackNavigator();
 export default function Routes({ viewedOnBoard }) {
     return (
         <Stack.Navigator screenOptions={{ detachPreviousScreen: true, presentation: "transparentModal" }} theme={DefaultTheme.colors.background}  >
-            <Stack.Screen
+            {/* <Stack.Screen
                 name="Splash"
                 component={ROUTES.Splash}
                 options={{ headerShown: false }}
@@ -24,7 +24,7 @@ export default function Routes({ viewedOnBoard }) {
                 name="SignIn"
                 component={ROUTES.SignIn}
                 options={{ headerShown: false }}
-            />
+            /> */}
 
             <Stack.Screen
                 name='Home'

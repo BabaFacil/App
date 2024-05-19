@@ -42,11 +42,8 @@ export const Services = styled.TouchableOpacity`
     justify-content: space-around;
 `;
 
-export const DockKids = styled.View`
-    align-items: flex-start;
-    justify-content: space-between;
-    flex-direction: row;
-    flex-wrap: wrap;
+export const DockKids = styled.FlatList`
+    
 `
 
 export const AddBtn = styled.TouchableOpacity`
