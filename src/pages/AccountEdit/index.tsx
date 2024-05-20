@@ -10,7 +10,7 @@ import * as S from './styles';
 import Card from "../../components/Card"
 import MenuBar from "../../components/MenuBar"
 
-export default function AccountInfo() {
+export default function AccountEdit() {
 
     const navigation = useNavigation();
     const theme = useTheme()
@@ -33,37 +33,28 @@ export default function AccountInfo() {
   return (
         <S.BackgoundContainer>
             <View style={{ flexDirection: 'row', marginTop: 40, alignItems: "center" }}>
-                    <TouchableOpacity onPress={() => { navigation.navigate('Settings' as never) }}><ArrowLeft strokeWidth={1} style={{ marginLeft: 10 }} color={theme.COLORS.ICON} size={28} /></TouchableOpacity>
+                    <TouchableOpacity onPress={() => { navigation.navigate('AccontInfo' as never) }}><ArrowLeft strokeWidth={1} style={{ marginLeft: 10 }} color={theme.COLORS.ICON} size={28} /></TouchableOpacity>
 
                     {/* TODO: Fazer o texto aparecer quando o usuário rolar a página */}
-                    <S.HeaderText >Configurações e Privacidade</S.HeaderText>
+                    <S.HeaderText >Perfil</S.HeaderText>
             </View>
 
             <S.Container>
-                <S.PrincipalText >Perfil</S.PrincipalText>
+                <S.PrincipalText >Informações da Conta</S.PrincipalText>
 
-                <S.UserImageNickname onPress={() => { navigation.navigate('AccountEdit' as never) }}>
+                <S.UserImageNickname>
                     <Image
                         source={require('../../assets/imgs/baba1.png')}
-                        style={{ height: 90, width: 90, borderRadius: 90}}
+                        style={{ height: 150, width: 150, borderRadius: 90}}
                         resizeMode='cover'
                     />
-                    <View style={{flexDirection: "column"}}>
-                        <Text style ={{fontSize: 18, fontFamily: "OpenSans_400Regular"}}>Kakashi Hatake</Text>
-                        <Text style ={{fontSize: 13, fontFamily: "OpenSans_400Regular", color: "#00000070"}}>+55 11 98180-5816</Text>
-                        <Text style ={{fontSize: 13, fontFamily: "OpenSans_400Regular", color: "#00000070"}}>kakashi.htake@outlook.com</Text>
-                    </View>
-                    {/* <ArrowRight strokeWidth={1} style={{ marginLeft: 10 }} color={theme.COLORS.ICON} size={28} /> */}
-                    <Text style={{ marginRight: 10}}><ChevronRight color="#8A8A8A" size={20}/></Text>
                 </S.UserImageNickname>
 
-                <Card title = "Preferencias">
+                <Card title = "Informações da conta">
                     <S.ButtonNav>
                         <S.Nav>
-                            {/* <Text>
-                                <Ionicons name="person-sharp" color={theme.COLORS.ICON} size={16} />
-                            </Text> */}
-                            <Text>Adcionar casa</Text>
+                            <Text>Nome de Usuário </Text>
+                            <Text style={{color: "#00000030", marginRight: 10, fontSize: 12}}>Kakashi Hatake</Text>
                         </S.Nav>
                         <Text><ChevronRight color="#8A8A8A" size={16} style={{ justifyContent: "flex-end" }} /></Text>
                     </S.ButtonNav>
@@ -73,7 +64,8 @@ export default function AccountInfo() {
                             {/* <Text>
                                 <Ionicons name="person-sharp" color={theme.COLORS.ICON} size={16} />
                             </Text> */}
-                            <Text>Idade das Babás</Text>
+                            <Text>E-mail</Text>
+                            <Text style={{color: "#00000030", marginRight: 10, fontSize: 12}}>kakashi.htake@outlook.com</Text>
                         </S.Nav>
                         <Text><ChevronRight color="#8A8A8A" size={16} style={{ justifyContent: "flex-end" }} /></Text>
                     </S.ButtonNav>
@@ -83,7 +75,39 @@ export default function AccountInfo() {
                             {/* <Text>
                                 <Ionicons name="person-sharp" color={theme.COLORS.ICON} size={16} />
                             </Text> */}
-                            <Text>Sexo das babás</Text>
+                            <Text>Telefone</Text>
+                            <Text style={{color: "#00000030", marginRight: 10, fontSize: 12}}>+55 11 98180-5816</Text>
+                        </S.Nav>
+                        <Text><ChevronRight color="#8A8A8A" size={16} style={{ justifyContent: "flex-end" }} /></Text>
+                    </S.ButtonNav>
+
+                    <S.ButtonNav>
+                        <S.Nav>
+                            {/* <Text>
+                                <Ionicons name="person-sharp" color={theme.COLORS.ICON} size={16} />
+                            </Text> */}
+                            <Text>Data de nascimento</Text>
+                            <Text style={{color: "#00000030", marginRight: 10, fontSize: 12}}>17/10/2002</Text>
+                        </S.Nav>
+                        <Text><ChevronRight color="#8A8A8A" size={16} style={{ justifyContent: "flex-end" }} /></Text>
+                    </S.ButtonNav>
+
+                    <S.ButtonNavView>
+                        <S.Nav>
+                            {/* <Text>
+                                <Ionicons name="person-sharp" color={theme.COLORS.ICON} size={16} />
+                            </Text> */}
+                            <Text style={{color: "#00000030", marginRight: 10, fontSize: 12}}>CPF</Text>
+                            <Text style={{color: "#00000030", marginRight: 10}}>515.485.875.64</Text>
+                        </S.Nav>
+                    </S.ButtonNavView>
+
+                    <S.ButtonNav>
+                        <S.Nav>
+                            {/* <Text>
+                                <Ionicons name="person-sharp" color={theme.COLORS.ICON} size={16} />
+                            </Text> */}
+                            <Text>Senha</Text>
                         </S.Nav>
                         <Text><ChevronRight color="#8A8A8A" size={16} style={{ justifyContent: "flex-end" }} /></Text>
                     </S.ButtonNav>

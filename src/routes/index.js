@@ -8,30 +8,30 @@ const Stack = createNativeStackNavigator();
 export default function Routes({ viewedOnBoard }) {
     return (
         <Stack.Navigator screenOptions={{ detachPreviousScreen: true, presentation: "transparentModal" }} theme={DefaultTheme.colors.background}  >
-            {/* <Stack.Screen
+            <Stack.Screen
                 name="Splash"
                 component={ROUTES.Splash}
                 options={{ headerShown: false }}
-            /> */}
+            />
 
-            {/* <Stack.Screen
+            <Stack.Screen
                 name="Welcome"
                 component={ROUTES.Welcome}
                 options={{ headerShown: false }}
-            /> */}
+            />
 
-            {/* <Stack.Screen
+            <Stack.Screen
                 name="SignIn"
                 component={ROUTES.SignIn}
                 options={{ headerShown: false }}
-            /> */}
+            />
 
-            {/* <Stack.Screen
+            <Stack.Screen
                 name='Home'
                 component={ROUTES.Home}
                 options={{ headerShown: false }}
-            /> */}
-            {/* <Stack.Screen
+            />
+            <Stack.Screen
                 name='PreChat'
                 component={ROUTES.PreChat}
                 options={{ headerShown: false }}
@@ -40,8 +40,8 @@ export default function Routes({ viewedOnBoard }) {
                 name="AccountCreation"
                 component={ROUTES.AccountCreation}
                 options={{ headerShown: false }}
-            /> */}
-{/* 
+            />
+
             <Stack.Screen
                 name="Settings"
                 component={ROUTES.Settings}
@@ -64,11 +64,17 @@ export default function Routes({ viewedOnBoard }) {
                 name="Chat"
                 component={ROUTES.Chat}
                 options={{ headerShown: false }}
-            /> */}
+            />
 
             <Stack.Screen 
-                name="Account"
+                name="AccontInfo"
                 component={ROUTES.AccountInfo}
+                options={{headerShown: false}}
+            />
+
+            <Stack.Screen 
+                name="AccountEdit"
+                component={ROUTES.AccountEdit}
                 options={{headerShown: false}}
             />
 
