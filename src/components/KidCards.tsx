@@ -60,7 +60,7 @@ const KidCards = ({onPress, nome, idade, genero, img }: defaultProps) => {
                 resizeMode='cover'
             />
             <View style={styles.infoKids}>
-                <Text numberOfLines={1} ellipsizeMode="middle" style={{ color: '#fff', fontWeight: 'bold' }}>{nome}</Text>
+                <Text numberOfLines={1} ellipsizeMode="middle" style={{ color: '#fff', width:"70%", fontWeight: 'bold' }}>{nome}</Text>
                 <Text numberOfLines={1} ellipsizeMode="middle" style={{ color: '#fff', fontWeight: 'bold' }}>{idade} anos</Text>
             </View>
         </TouchableOpacity>
