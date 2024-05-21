@@ -43,7 +43,7 @@ const KidCards = ({onPress, nome, idade, genero, img }: defaultProps) => {
             height: 30,
             flexDirection: "row",
             alignItems: 'center',
-            paddingHorizontal: 10,
+            paddingHorizontal: 2,
             justifyContent: 'space-between',
             position: 'absolute',
             width: '100%',
