@@ -35,14 +35,16 @@ const KidCards = ({onPress, nome, idade, genero, img }: defaultProps) => {
             borderRadius: 10,
             marginLeft:'2%',
             marginRight:'2%',
-             width: '46%' 
+            width: '46%' 
         },
         infoKids: {
             fontFamily: 'OpenSans_400Regular',
             backgroundColor: genero == 'f'? '#E9618190' : '#98D2EB90',
             height: 30,
+            flexDirection: "row",
             alignItems: 'center',
-            justifyContent: 'center',
+            paddingHorizontal: 10,
+            justifyContent: 'space-between',
             position: 'absolute',
             width: '100%',
             bottom: 0,
@@ -58,7 +60,8 @@ const KidCards = ({onPress, nome, idade, genero, img }: defaultProps) => {
                 resizeMode='cover'
             />
             <View style={styles.infoKids}>
-                <Text style={{ color: '#fff', fontWeight: 'bold' }}>{nome}, {idade} anos</Text>
+                <Text numberOfLines={1} ellipsizeMode="middle" style={{ color: '#fff', fontWeight: 'bold' }}>{nome}</Text>
+                <Text numberOfLines={1} ellipsizeMode="middle" style={{ color: '#fff', fontWeight: 'bold' }}>{idade} anos</Text>
             </View>
         </TouchableOpacity>
     )
