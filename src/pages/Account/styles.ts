@@ -19,11 +19,12 @@ export const HeaderText = styled.Text`
 `
 
 export const UserImageNickname = styled.TouchableOpacity`
+    padding: 15px
     marginTop: 10%;
     marginRight: 30%;
     width: 100%;
     flexDirection: row; 
-    justifyContent: center;
+    justifyContent: space-between;
     alignItems: center;
 `
 
@@ -37,21 +38,11 @@ export const PrincipalText = styled.Text`
 export const Nav = styled.View`
     flex: 1;
     flex-direction: row;
-    justify-content: space-between;
+    justify-items: center;
     align-items: center;
 `;
 
 export const ButtonNav = styled.TouchableOpacity`
-    flex-direction: row;
-    border-radius: 5px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    margin-bottom: 5px;
-    align-self: center;
-    align-items: center;
-`;
-
-export const ButtonNavView = styled.View`
     flex-direction: row;
     border-radius: 5px;
     padding-top: 10px;

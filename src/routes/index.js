@@ -67,12 +67,18 @@ export default function Routes({ viewedOnBoard }) {
             />
 
             <Stack.Screen 
-                name="AccontInfo"
-                component={ROUTES.AccountInfo}
+                name="Account"
+                component={ROUTES.Account}
                 options={{headerShown: false}}
             />
 
             <Stack.Screen 
+                name="AccountInfo"
+                component={ROUTES.AccountInfo}
+                options={{headerShown: false}}
+            />
+
+            <Stack.Screen
                 name="AccountEdit"
                 component={ROUTES.AccountEdit}
                 options={{headerShown: false}}

@@ -1,122 +1,81 @@
 import { OpenSans_400Regular, OpenSans_500Medium, OpenSans_700Bold, useFonts } from '@expo-google-fonts/open-sans';
-import React from 'react'
-import {Text, View, TouchableOpacity, Image} from 'react-native'
-import { ArrowLeft, ArrowRight,  BookA, ChevronRight, Flag, Info, LogOut, MessageSquareText, Moon, PieChart, Scale, Shield } from 'lucide-react-native';
-
-import { useNavigation } from '@react-navigation/native';
-import { useTheme } from 'styled-components/native';
-
+import { useNavigation, useRoute } from '@react-navigation/native';
+import { ArrowLeft, PencilLine } from 'lucide-react-native';
+import React, { useContext } from 'react';
+import { Text, TouchableOpacity, View, TextInput } from 'react-native';
+import { GestureHandlerRootView, Switch } from 'react-native-gesture-handler';
+import { ThemeContext as ThemeContextStyled } from 'styled-components';
+import Card from '@/components/Card';
+import { ThemeContext, ThemeType } from '@/theme/Theme';
 import * as S from './styles';
-import Card from "../../components/Card"
-import MenuBar from "../../components/MenuBar"
+import { useTheme } from 'styled-components/native';
+import { useEffect } from 'react';
 
+// FIXME:  Warning: React has detected a change in the order of Hooks called.
+//         This will lead to bugs and errors if not fixed.
 export default function AccountEdit() {
-
     const navigation = useNavigation();
-    const theme = useTheme()
+    const themeUse = useTheme()
+    const route = useRoute();
+    const { title } = route.params;
 
     let [fontsLoaded] = useFonts({
         OpenSans_400Regular,
         OpenSans_500Medium,
         OpenSans_700Bold,
-      });
-      if (!fontsLoaded) {
+    });
+
+    if (!fontsLoaded) {
         return <Text>Loading...</Text>;
-      }
+    }
 
-      const imagePaths = {
-        'baba1': require('../../assets/imgs/baba1.png'),
-        'baba2': require('../../assets/imgs/baba2.png'),
-    };
+    const { theme, toggleTheme } = useContext(ThemeContext)
 
+    const isDarkMode = theme === ThemeType.dark
 
-  return (
-        <S.BackgoundContainer>
-            <View style={{ flexDirection: 'row', marginTop: 40, alignItems: "center" }}>
-                    <TouchableOpacity onPress={() => { navigation.navigate('AccontInfo' as never) }}><ArrowLeft strokeWidth={1} style={{ marginLeft: 10 }} color={theme.COLORS.ICON} size={28} /></TouchableOpacity>
+    return (
+        <>
+            <S.BackgoundContainer>
+                <View style={{ flexDirection: 'row', marginTop: 40, alignItems: "center" }}>
+                    <TouchableOpacity onPress={() => { navigation.navigate('AccountInfo' as never) }}><ArrowLeft strokeWidth={1} style={{ marginLeft: 10 }} color={themeUse.COLORS.ICON} size={28} /></TouchableOpacity>
 
                     {/* TODO: Fazer o texto aparecer quando o usuário rolar a página */}
-                    <S.HeaderText >Perfil</S.HeaderText>
-            </View>
+                    <S.HeaderText >Informações da conta</S.HeaderText>
+                </View>
 
-            <S.Container>
-                <S.PrincipalText >Informações da Conta</S.PrincipalText>
-
-                <S.UserImageNickname>
-                    <Image
-                        source={require('../../assets/imgs/baba1.png')}
-                        style={{ height: 150, width: 150, borderRadius: 90}}
-                        resizeMode='cover'
-                    />
-                </S.UserImageNickname>
-
-                <Card title = "Informações da conta">
-                    <S.ButtonNav>
-                        <S.Nav>
-                            <Text>Nome de Usuário </Text>
-                            <Text style={{color: "#00000030", marginRight: 10, fontSize: 12}}>Kakashi Hatake</Text>
-                        </S.Nav>
-                        <Text><ChevronRight color="#8A8A8A" size={16} style={{ justifyContent: "flex-end" }} /></Text>
-                    </S.ButtonNav>
-
-                    <S.ButtonNav>
-                        <S.Nav>
-                            {/* <Text>
-                                <Ionicons name="person-sharp" color={theme.COLORS.ICON} size={16} />
-                            </Text> */}
-                            <Text>E-mail</Text>
-                            <Text style={{color: "#00000030", marginRight: 10, fontSize: 12}}>kakashi.htake@outlook.com</Text>
-                        </S.Nav>
-                        <Text><ChevronRight color="#8A8A8A" size={16} style={{ justifyContent: "flex-end" }} /></Text>
-                    </S.ButtonNav>
-
-                    <S.ButtonNav>
-                        <S.Nav>
-                            {/* <Text>
-                                <Ionicons name="person-sharp" color={theme.COLORS.ICON} size={16} />
-                            </Text> */}
-                            <Text>Telefone</Text>
-                            <Text style={{color: "#00000030", marginRight: 10, fontSize: 12}}>+55 11 98180-5816</Text>
-                        </S.Nav>
-                        <Text><ChevronRight color="#8A8A8A" size={16} style={{ justifyContent: "flex-end" }} /></Text>
-                    </S.ButtonNav>
-
-                    <S.ButtonNav>
-                        <S.Nav>
-                            {/* <Text>
-                                <Ionicons name="person-sharp" color={theme.COLORS.ICON} size={16} />
-                            </Text> */}
-                            <Text>Data de nascimento</Text>
-                            <Text style={{color: "#00000030", marginRight: 10, fontSize: 12}}>17/10/2002</Text>
-                        </S.Nav>
-                        <Text><ChevronRight color="#8A8A8A" size={16} style={{ justifyContent: "flex-end" }} /></Text>
-                    </S.ButtonNav>
-
-                    <S.ButtonNavView>
-                        <S.Nav>
-                            {/* <Text>
-                                <Ionicons name="person-sharp" color={theme.COLORS.ICON} size={16} />
-                            </Text> */}
-                            <Text style={{color: "#00000030", marginRight: 10, fontSize: 12}}>CPF</Text>
-                            <Text style={{color: "#00000030", marginRight: 10}}>515.485.875.64</Text>
-                        </S.Nav>
-                    </S.ButtonNavView>
-
-                    <S.ButtonNav>
-                        <S.Nav>
-                            {/* <Text>
-                                <Ionicons name="person-sharp" color={theme.COLORS.ICON} size={16} />
-                            </Text> */}
-                            <Text>Senha</Text>
-                        </S.Nav>
-                        <Text><ChevronRight color="#8A8A8A" size={16} style={{ justifyContent: "flex-end" }} /></Text>
-                    </S.ButtonNav>
-                </Card>
+                <S.Container contentContainerStyle={{ paddingBottom: 200 }}>
+                    <S.PrincipalText >{title}</S.PrincipalText>
+                    <Card title={title != 'Senha'? `Redefinir ${title}` : `Gerar nova ${title}` }>
+                        <S.ButtonNav>
+                            <S.Nav>
+                                <S.TextInput 
+                                    placeholder={title !='Senha'? 'Kakashi' : '' }
+                                    secureTextEntry={title !='Senha'? false : true}  
+                                />
+                                <Text>
+                                    <PencilLine strokeWidth={1} style={{ marginLeft: 10 }} color={themeUse.COLORS.ICON} size={20} />
+                                </Text>
+                            </S.Nav>
+                        </S.ButtonNav>
+                    </Card>
+                    {title === 'Nome' && (
+                        <Card title="Redifinir Sobrenome">
+                            <S.ButtonNav>
+                                <S.Nav>
+                                    <S.TextInput placeholder='Hakate' />
+                                    <Text>
+                                        <PencilLine strokeWidth={1} style={{ marginLeft: 10 }} color={themeUse.COLORS.ICON} size={20} />
+                                    </Text>
+                                </S.Nav>
+                            </S.ButtonNav>
+                        </Card>
+                    )}
 
 
-            </S.Container>
 
-            <MenuBar TelaAtiva={'config'} />
-        </S.BackgoundContainer>
-  )
+                </S.Container>
+            </S.BackgoundContainer>
+        </>
+    )
 }
+

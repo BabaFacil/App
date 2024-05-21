@@ -19,12 +19,11 @@ export const HeaderText = styled.Text`
 `
 
 export const UserImageNickname = styled.TouchableOpacity`
-    padding: 15px
     marginTop: 10%;
     marginRight: 30%;
     width: 100%;
     flexDirection: row; 
-    justifyContent: space-between;
+    justifyContent: center;
     alignItems: center;
 `
 
@@ -38,7 +37,7 @@ export const PrincipalText = styled.Text`
 export const Nav = styled.View`
     flex: 1;
     flex-direction: row;
-    justify-items: center;
+    justify-content: space-between;
     align-items: center;
 `;
 
@@ -51,3 +50,25 @@ export const ButtonNav = styled.TouchableOpacity`
     align-self: center;
     align-items: center;
 `;
+
+export const ButtonNavView = styled.View`
+    flex-direction: row;
+    border-radius: 5px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-bottom: 5px;
+    align-self: center;
+    align-items: center;
+`;
+
+export const EditView = styled.View`
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    width: 25px;
+    height: 25px;
+    left: -30px;
+    bottom: -50px;
+    backgroundColor: ${({theme}) => theme.COLORS.BACKGROUND};
+    border-radius: 90px;
+`

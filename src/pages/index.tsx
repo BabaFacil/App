@@ -8,6 +8,7 @@ export { default as Home } from './Home'
 export { default as Settings } from './Settings'
 export { default as SignIn } from './SignIn'
 export { default as Splash } from './Splash'
+export {default as Account} from './Account'
 export {default as AccountInfo} from './AccountInfo'
 export {default as AccountEdit} from './AccountEdit'
 
