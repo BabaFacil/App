@@ -77,10 +77,16 @@ export const ModalActions = styled.View`
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    padding: 10px;
+    padding: 10px 20px;
 `
+
 export const ModalActionsText = styled.Text`
     font-size: 14px;
+    color: ${({ theme }) => theme.COLORS.TEXT_PRIMARY};
+    font-family:${({ theme }) => theme.FONT.MEDIUM};
+`
 
-    font-family:${({ theme }) => theme.FONT.BOLD};
+export const ModalNav = styled.TouchableOpacity`
+    flex-direction: row;
+    align-items: center;
 `

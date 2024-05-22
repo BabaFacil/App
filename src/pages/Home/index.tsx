@@ -1,21 +1,26 @@
+import ChildStatus from '@/components/ChildStatus';
 import KidCards from '@/components/KidCards';
 import MenuBar from '@/components/MenuBar';
+
 import { OpenSans_400Regular, OpenSans_500Medium, OpenSans_700Bold, useFonts } from '@expo-google-fonts/open-sans';
 import { MaterialIcons } from '@expo/vector-icons';
+import { useNavigation } from '@react-navigation/native';
+import { EyeOff, Pencil, Trash2 } from 'lucide-react-native';
 import React, { useRef, useState } from 'react';
-import { Dimensions, Text, Image, ImageBackground, View } from 'react-native';
-import { GestureHandlerRootView, TouchableOpacity } from 'react-native-gesture-handler';
+import { Dimensions, ImageBackground, Text, View } from 'react-native';
+import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import { Modalize } from 'react-native-modalize';
 import { useTheme } from 'styled-components/native';
+
 import * as S from './styles';
-import { useNavigation } from '@react-navigation/native';
-import { EyeOff, Pencil, PencilLine, Trash2 } from 'lucide-react-native';
+import { Separator } from '../PreChat/styles';
 
 export default function Home() {
 
   const navigation = useNavigation();
 
   const height = Dimensions.get('window').height
+  const width = Dimensions.get('window').width
   const theme = useTheme()
   const modalRef = useRef(null)
 
@@ -29,42 +34,54 @@ export default function Home() {
       name: 'Fernanda Alyssa Fernandes da Silva',
       idade: '8',
       genero: 'm',
-      img: 'imgBoy'
+      img: 'imgBoy',
+      status: 'online',
+      babySitter: 'Claudia',
     },
     {
       id: 3,
       name: 'Ana',
       idade: '8',
-      genero: 'm',
-      img: 'imgGirl'
+      genero: 'f',
+      img: 'imgGirl',
+      status: 'offline',
+      babySitter: '',
     },
     {
       id: 4,
       name: 'davi',
       idade: '8',
       genero: 'm',
-      img: 'imgBoy'
+      img: 'imgBoy',
+      status: 'online',
+      babySitter: 'Nicole',
     },
     {
       id: 5,
       name: 'AAAA',
       idade: '8',
       genero: 'm',
-      img: 'imgBoy'
+      img: 'imgBoy',
+      status: 'offline',
+      babySitter: '',
     },
     {
       id: 6,
       name: 'davi',
       idade: '8',
       genero: 'm',
-      img: 'imgBoy'
+      img: 'imgBoy',
+      status: 'online',
+      babySitter: 'Song Ha Young da Silva',
     },
     {
       id: 7,
       name: 'AAAA',
       idade: '8',
       genero: 'm',
-      img: 'imgBoy'
+      img: 'imgBoy',
+      status: 'offline',
+      babySitter: '',
     },
   ]
 
@@ -73,7 +90,9 @@ export default function Home() {
     name: '',
     idade: '',
     genero: '',
-    img: ''
+    img: '',
+    status: '',
+    babySitter: '',
   })
 
   let [fontsLoaded] = useFonts({
@@ -84,6 +103,7 @@ export default function Home() {
   if (!fontsLoaded) {
     return <Text>Loading...</Text>;
   }
+
 
   return (
     <GestureHandlerRootView style={{ flex: 1, backgroundColor: theme.COLORS.BACKGROUND }}>
@@ -118,7 +138,9 @@ export default function Home() {
                 name: item.name,
                 idade: item.idade,
                 genero: item.genero,
-                img: item.img
+                img: item.img,
+                status: item.status,
+                babySitter: item.babySitter
               })
 
               modalRef.current?.open();
@@ -132,6 +154,7 @@ export default function Home() {
         <Text style={{ fontSize: 25, color: '#fff' }}>+</Text>
       </S.AddBtn>
       <MenuBar TelaAtiva={'home'} />
+
       <Modalize
         ref={modalRef}
         snapPoint={height / 2}
@@ -152,27 +175,32 @@ export default function Home() {
         >
 
           <S.ModalPhotoContainer>
-              <S.ModalText style={{ width: "70%" }} numberOfLines={1} ellipsizeMode="middle">{currentData.name}</S.ModalText>
-              <S.ModalText>{currentData.idade} Anos</S.ModalText>
+            <S.ModalText style={{ width: "70%" }} numberOfLines={1} ellipsizeMode="middle">{currentData.name}</S.ModalText>
+            <S.ModalText>{currentData.idade} Anos</S.ModalText>
           </S.ModalPhotoContainer>
         </ImageBackground>
+
         <S.ModalActions>
 
-          <TouchableOpacity style={{ flexDirection: 'row', alignItems: 'center' }}>
-            <EyeOff size={14} color={theme.COLORS.TEXT_PRIMARY} />
+          <S.ModalNav>
+            <EyeOff style={{ marginRight: 5 }} size={width / 20} color={theme.COLORS.TEXT_PRIMARY} />
             <S.ModalActionsText>Ocultar detalhes</S.ModalActionsText>
-          </TouchableOpacity>
+          </S.ModalNav>
+
           <View style={{ flexDirection: 'row' }}>
-            <TouchableOpacity style={{ flexDirection: 'row', alignItems: 'center', marginRight: 10 }}>
-              <Pencil size={14} color={theme.COLORS.TEXT_PRIMARY} />
-              <S.ModalActionsText>Editar</S.ModalActionsText>
-            </TouchableOpacity>
-            <TouchableOpacity style={{ flexDirection: 'row', alignItems: 'center' }}>
-              <Trash2 size={14} color={theme.COLORS.TEXT_PRIMARY} />
-              <S.ModalActionsText>Excluir</S.ModalActionsText>
-            </TouchableOpacity>
+
+            <S.ModalNav style={{ marginRight: 20 }}>
+              <Pencil size={width / 20} color={theme.COLORS.TEXT_PRIMARY} />
+            </S.ModalNav>
+
+            <S.ModalNav>
+              <Trash2 size={width / 20} color={theme.COLORS.TEXT_PRIMARY} />
+            </S.ModalNav>
           </View>
         </S.ModalActions>
+        <Separator/>
+        <ChildStatus status={currentData.status as 'online' | 'offline'} babySitter={currentData.babySitter} />
+      
       </Modalize>
     </GestureHandlerRootView>
 
