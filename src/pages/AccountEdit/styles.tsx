@@ -50,5 +50,5 @@ export const Text = styled.Text`
 
 export const TextInput = styled.TextInput`
     width: 90%;
-
+    color: ${({theme})=> theme.COLORS.TEXT_SMALL};
 `

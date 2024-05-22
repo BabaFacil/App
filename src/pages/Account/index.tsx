@@ -1,14 +1,14 @@
 import { OpenSans_400Regular, OpenSans_500Medium, OpenSans_700Bold, useFonts } from '@expo-google-fonts/open-sans';
-import React from 'react'
-import {Text, View, TouchableOpacity, Image} from 'react-native'
-import { ArrowLeft, ArrowRight,  BookA, ChevronRight, Flag, Info, LogOut, MessageSquareText, Moon, PieChart, Scale, Shield } from 'lucide-react-native';
+import { ArrowLeft, ChevronRight } from 'lucide-react-native';
+import React from 'react';
+import { Image, Text, TouchableOpacity, View } from 'react-native';
 
 import { useNavigation } from '@react-navigation/native';
 import { useTheme } from 'styled-components/native';
 
+import Card from "../../components/Card";
+import MenuBar from "../../components/MenuBar";
 import * as S from './styles';
-import Card from "../../components/Card"
-import MenuBar from "../../components/MenuBar"
 
 export default function Account() {
 
@@ -49,9 +49,9 @@ export default function Account() {
                         resizeMode='cover'
                     />
                     <View style={{flexDirection: "column"}}>
-                        <Text style ={{fontSize: 18, fontFamily: "OpenSans_400Regular"}}>Kakashi Hatake</Text>
-                        <Text style ={{fontSize: 13, fontFamily: "OpenSans_400Regular", color: "#00000070"}}>+55 11 98180-5816</Text>
-                        <Text style ={{fontSize: 13, fontFamily: "OpenSans_400Regular", color: "#00000070"}}>kakashi.htake@outlook.com</Text>
+                        <S.FirstText >Kakashi Hatake</S.FirstText>
+                        <S.SegondText>+55 11 98180-5816</S.SegondText>
+                        <S.SegondText>kakashi.htake@outlook.com</S.SegondText>
                     </View>
                     {/* <ArrowRight strokeWidth={1} style={{ marginLeft: 10 }} color={theme.COLORS.ICON} size={28} /> */}
                     <Text style={{ marginRight: 10}}><ChevronRight color="#8A8A8A" size={20}/></Text>
@@ -63,7 +63,7 @@ export default function Account() {
                             {/* <Text>
                                 <Ionicons name="person-sharp" color={theme.COLORS.ICON} size={16} />
                             </Text> */}
-                            <Text>Adcionar casa</Text>
+                            <S.Text>Adcionar casa</S.Text>
                         </S.Nav>
                         <Text><ChevronRight color="#8A8A8A" size={16} style={{ justifyContent: "flex-end" }} /></Text>
                     </S.ButtonNav>
@@ -73,7 +73,7 @@ export default function Account() {
                             {/* <Text>
                                 <Ionicons name="person-sharp" color={theme.COLORS.ICON} size={16} />
                             </Text> */}
-                            <Text>Idade das Babás</Text>
+                            <S.Text>Idade das Babás</S.Text>
                         </S.Nav>
                         <Text><ChevronRight color="#8A8A8A" size={16} style={{ justifyContent: "flex-end" }} /></Text>
                     </S.ButtonNav>
@@ -83,7 +83,7 @@ export default function Account() {
                             {/* <Text>
                                 <Ionicons name="person-sharp" color={theme.COLORS.ICON} size={16} />
                             </Text> */}
-                            <Text>Sexo das babás</Text>
+                            <S.Text>Sexo das babás</S.Text>
                         </S.Nav>
                         <Text><ChevronRight color="#8A8A8A" size={16} style={{ justifyContent: "flex-end" }} /></Text>
                     </S.ButtonNav>

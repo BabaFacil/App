@@ -51,3 +51,19 @@ export const ButtonNav = styled.TouchableOpacity`
     align-self: center;
     align-items: center;
 `;
+
+export const FirstText = styled.Text`
+    font-size: 18px;
+    font-family: 'OpenSans_400Regular';
+    color: ${({theme})=> theme.COLORS.TEXT_PRIMARY};
+`
+
+export const SegondText = styled.Text`
+    font-size: 13px;
+    font-family: 'OpenSans_400Regular';
+    color: ${({theme})=> theme.COLORS.TEXT_SMALL};
+`
+
+export const Text = styled.Text`
+    color: ${({theme})=> theme.COLORS.TEXT_SMALL};
+`

@@ -1,14 +1,14 @@
 import { OpenSans_400Regular, OpenSans_500Medium, OpenSans_700Bold, useFonts } from '@expo-google-fonts/open-sans';
-import React from 'react'
-import {Text, View, TouchableOpacity, Image} from 'react-native'
-import { ArrowLeft, ChevronRight, SwitchCamera } from 'lucide-react-native';
+import { ArrowLeft, ChevronRight, PenIcon } from 'lucide-react-native';
+import React from 'react';
+import { Image, Text, TouchableOpacity, View } from 'react-native';
 
 import { useNavigation } from '@react-navigation/native';
 import { useTheme } from 'styled-components/native';
 
+import Card from "../../components/Card";
+import MenuBar from "../../components/MenuBar";
 import * as S from './styles';
-import Card from "../../components/Card"
-import MenuBar from "../../components/MenuBar"
 
 export default function Account() {
 
@@ -48,62 +48,53 @@ export default function Account() {
                         resizeMode='cover'
                     />
                     <S.EditView>
-                        <SwitchCamera strokeWidth={1} color={'#000'} size={20} />
+                        <PenIcon strokeWidth={1} color={theme.COLORS.ICON} size={20} />
                     </S.EditView>
                 </S.UserImageNickname>
 
                 <Card title = "Informações da conta">
                     <S.ButtonNav onPress={() => { navigation.navigate('AccountEdit' as never, {title: 'Nome'}) }}>
                         <S.Nav>
-                            <Text>Nome de Usuário </Text>
-                            <Text style={{color: "#00000030", marginRight: 10, fontSize: 12}}>Kakashi Hatake</Text>
+                            <S.Text>Nome de Usuário </S.Text>
+                            <S.InfoText>Kakashi Hatake</S.InfoText>
                         </S.Nav>
                         <Text><ChevronRight color="#8A8A8A" size={16} style={{ justifyContent: "flex-end" }} /></Text>
                     </S.ButtonNav>
 
                     <S.ButtonNav onPress={() => { navigation.navigate('AccountEdit' as never, {title: 'E-mail'}) }}>
                         <S.Nav>
-                            <Text>E-mail</Text>
-                            <Text style={{color: "#00000030", marginRight: 10, fontSize: 12}}>kakashi.htake@outlook.com</Text>
+                            <S.Text>E-mail</S.Text>
+                            <S.InfoText>kakashi.htake@outlook.com</S.InfoText>
                         </S.Nav>
                         <Text><ChevronRight color="#8A8A8A" size={16} style={{ justifyContent: "flex-end" }} /></Text>
                     </S.ButtonNav>
 
                     <S.ButtonNav onPress={() => { navigation.navigate('AccountEdit' as never, {title: 'Telefone'}) }}>
                         <S.Nav>
-                            <Text>Telefone</Text>
-                            <Text style={{color: "#00000030", marginRight: 10, fontSize: 12}}>+55 11 98180-5816</Text>
+                            <S.Text>Telefone</S.Text>
+                            <S.InfoText>+55 11 98180-5816</S.InfoText>
                         </S.Nav>
                         <Text><ChevronRight color="#8A8A8A" size={16} style={{ justifyContent: "flex-end" }} /></Text>
                     </S.ButtonNav>
 
                     <S.ButtonNav onPress={() => { navigation.navigate('AccountEdit' as never, {title: 'Data de Nascimento'}) }}>
                         <S.Nav>
-                            {/* <Text>
-                                <Ionicons name="person-sharp" color={theme.COLORS.ICON} size={16} />
-                            </Text> */}
-                            <Text>Data de nascimento</Text>
-                            <Text style={{color: "#00000030", marginRight: 10, fontSize: 12}}>17/10/2002</Text>
+                            <S.Text>Data de nascimento</S.Text>
+                            <S.InfoText>17/10/2002</S.InfoText>
                         </S.Nav>
                         <Text><ChevronRight color="#8A8A8A" size={16} style={{ justifyContent: "flex-end" }} /></Text>
                     </S.ButtonNav>
 
                     <S.ButtonNavView>
                         <S.Nav>
-                            {/* <Text>
-                                <Ionicons name="person-sharp" color={theme.COLORS.ICON} size={16} />
-                            </Text> */}
-                            <Text style={{color: "#00000030", marginRight: 10, fontSize: 12}}>CPF</Text>
-                            <Text style={{color: "#00000030", marginRight: 10}}>515.485.875.64</Text>
+                            <S.Text>CPF</S.Text>
+                            <S.InfoText>515.485.875.64</S.InfoText>
                         </S.Nav>
                     </S.ButtonNavView>
 
                     <S.ButtonNav onPress={() => { navigation.navigate('AccountEdit' as never, {title: 'Senha'}) }}>
                         <S.Nav>
-                            {/* <Text>
-                                <Ionicons name="person-sharp" color={theme.COLORS.ICON} size={16} />
-                            </Text> */}
-                            <Text>Senha</Text>
+                            <S.Text>Senha</S.Text>
                         </S.Nav>
                         <Text><ChevronRight color="#8A8A8A" size={16} style={{ justifyContent: "flex-end" }} /></Text>
                     </S.ButtonNav>

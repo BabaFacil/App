@@ -62,13 +62,22 @@ export const ButtonNavView = styled.View`
 `;
 
 export const EditView = styled.View`
-    position: relative;
+    position: absolute;
     justify-content: center;
     align-items: center;
-    width: 25px;
-    height: 25px;
-    left: -30px;
-    bottom: -50px;
+    width: 40px;
+    height: 40px;
+    left: 240px;
+    bottom: 5px;
     backgroundColor: ${({theme}) => theme.COLORS.BACKGROUND};
     border-radius: 90px;
+`
+
+export const Text = styled.Text`
+    color: ${({theme})=> theme.COLORS.TEXT_PRIMARY};
+`
+export const InfoText = styled.Text`
+    margin-right: 10px;
+    font-size: 12px;
+    color: ${({theme})=> theme.COLORS.TEXT_SMALL};
 `
