@@ -60,9 +60,6 @@ export default function Account() {
                 <Card title = "Preferencias">
                     <S.ButtonNav>
                         <S.Nav>
-                            {/* <Text>
-                                <Ionicons name="person-sharp" color={theme.COLORS.ICON} size={16} />
-                            </Text> */}
                             <S.Text>Adcionar casa</S.Text>
                         </S.Nav>
                         <Text><ChevronRight color="#8A8A8A" size={16} style={{ justifyContent: "flex-end" }} /></Text>
