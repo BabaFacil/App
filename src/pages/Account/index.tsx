@@ -53,7 +53,6 @@ export default function Account() {
                         <S.SegondText>+55 11 98180-5816</S.SegondText>
                         <S.SegondText>kakashi.htake@outlook.com</S.SegondText>
                     </View>
-                    {/* <ArrowRight strokeWidth={1} style={{ marginLeft: 10 }} color={theme.COLORS.ICON} size={28} /> */}
                     <Text style={{ marginRight: 10}}><ChevronRight color="#8A8A8A" size={20}/></Text>
                 </S.UserImageNickname>
 
@@ -67,9 +66,6 @@ export default function Account() {
 
                     <S.ButtonNav>
                         <S.Nav>
-                            {/* <Text>
-                                <Ionicons name="person-sharp" color={theme.COLORS.ICON} size={16} />
-                            </Text> */}
                             <S.Text>Idade das Babás</S.Text>
                         </S.Nav>
                         <Text><ChevronRight color="#8A8A8A" size={16} style={{ justifyContent: "flex-end" }} /></Text>
@@ -77,9 +73,6 @@ export default function Account() {
 
                     <S.ButtonNav>
                         <S.Nav>
-                            {/* <Text>
-                                <Ionicons name="person-sharp" color={theme.COLORS.ICON} size={16} />
-                            </Text> */}
                             <S.Text>Sexo das babás</S.Text>
                         </S.Nav>
                         <Text><ChevronRight color="#8A8A8A" size={16} style={{ justifyContent: "flex-end" }} /></Text>

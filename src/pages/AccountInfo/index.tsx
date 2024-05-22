@@ -34,7 +34,6 @@ export default function Account() {
         <S.BackgoundContainer>
             <View style={{ flexDirection: 'row', marginTop: 40, alignItems: "center" }}>
                     <TouchableOpacity onPress={() => { navigation.navigate('Account' as never) }}><ArrowLeft strokeWidth={1} style={{ marginLeft: 10 }} color={theme.COLORS.ICON} size={28} /></TouchableOpacity>
-                    {/* TODO: Fazer o texto aparecer quando o usuário rolar a página */}
                     <S.HeaderText >Perfil</S.HeaderText>
             </View>
 

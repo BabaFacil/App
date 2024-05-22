@@ -1,9 +1,9 @@
+import BtnC from '@/components/CustomButton';
 import { OpenSans_400Regular, OpenSans_700Bold, useFonts } from '@expo-google-fonts/open-sans';
 import { Ionicons } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
 import React from 'react';
-import { Image, Text, TextInput, TouchableOpacity, View } from 'react-native';
-import BtnC from '@/components/CustomButton';
+import { Image, Text } from 'react-native';
 import * as S from './styles';
 export default function AccountCreation() {
   const navigation = useNavigation();
@@ -37,7 +37,6 @@ export default function AccountCreation() {
           btnColor='#E96181'
           colorText='#FFF'
           onPress={() => { navigation.navigate('Home' as never) }}
-        // onPress={() => { modalRegisterRef.current?.open(); }}
         />
       </S.Form>
       <S.ContainerLogo>
