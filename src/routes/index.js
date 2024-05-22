@@ -65,6 +65,11 @@ export default function Routes({ viewedOnBoard }) {
                 component={ROUTES.Chat}
                 options={{ headerShown: false }}
             />
+            <Stack.Screen
+                name="RegisterChild"
+                component={ROUTES.RegisterChild}
+                options={{ headerShown: false }}
+            />
 
             <Stack.Screen 
                 name="Account"
