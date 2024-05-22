@@ -23,6 +23,9 @@ export default {
 
         TEXT_PRIMARY: "#192124",
         TEXT_SECONDARY: "#E96181",
+
+        TEXT_SMALL: "#00000070",
+
     },
     FONT:{
         MEDIUM: "OpenSans_500Medium",
