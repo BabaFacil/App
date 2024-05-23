@@ -30,7 +30,7 @@ export default function SignIn() {
         <GestureHandlerRootView style={{ flex: 1 }}>
             <S.Container >
                 <S.ContainerLogo>
-                    <Animatable.View animation='fadeInDown' delay={600} style={{ flexDirection: 'row', justifyContent: "center", alignItems: 'center' }}>
+                    <Animatable.View animation='fadeInDown' delay={600} style={{ alignItems: 'center' }}>
                         <Image
                             source={require('../../assets/imgs/logo-text2.png')}
                             style={{ width: '90%' }}
@@ -39,7 +39,7 @@ export default function SignIn() {
                     </Animatable.View>
                 </S.ContainerLogo>
 
-                <Animatable.View delay={600} animation='fadeInUp' style={{ flex: 1 }}>
+                <Animatable.View delay={600} animation='fadeInUp'>
                     <BtnC
                         buttonText="Cadastrar"
                         btnColor='#E96181'
