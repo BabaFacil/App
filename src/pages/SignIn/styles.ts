@@ -7,9 +7,7 @@ export const Container = styled.View`
 
 export const ContainerLogo = styled.View`
     justify-content: center;
-    margin-top: 7%;
-    margin-bottom: 70%;
-    flex: 2;
+    flex: 1;
 `;
 
 export const InputStyle = styled.TextInput`
