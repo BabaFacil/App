@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { Animated, FlatList, View } from 'react-native'
 import { ThemeContext } from 'styled-components'
 import AsyncStorage from '@react-native-async-storage/async-storage';
@@ -19,28 +19,34 @@ export default function Onboarding() {
     const scrollX = useRef(new Animated.Value(0)).current
 
     const slidesRef = useRef(null)
-    const viewableItemsChanged = useRef(({ viewableItems }) => {
-        setCurrentIndex(viewableItems[0].index)
-    }).current;
 
+    useEffect(()=>{
+        slidesRef.current?.scrollToIndex({
+            index: currentIndex,
+            animated: true
+        })
+    },[currentIndex])
 
     const scrollTo = async () => {
-        if (currentIndex < slides.length - 1) {
-            slidesRef.current.scrollToIndex({ index: currentIndex + 1 })
-        } else {
+        if(currentIndex === slides.length -1){
             try {
                 await AsyncStorage.setItem("@viewedonboarding", "true")
                 navigation.navigate('SignIn' as never) 
+                return
             } catch (e) {
                 console.log(e);
                 
             }
         }
+
+        
+        setCurrentIndex(currentIndex + 1)
     }
     const scrollBackwards = () => {
-        if (currentIndex !== 0) {
-            slidesRef.current.scrollToIndex({ index: currentIndex - 1 })
+        if(currentIndex === 0){
+            return
         }
+        setCurrentIndex(currentIndex - 1)
     }
     return (
         <Container>
@@ -48,6 +54,7 @@ export default function Onboarding() {
                 <FlatList
                     data={slides}
                     renderItem={({ item }) => <OnBoardingItem item={item} />}
+                    initialScrollIndex={0}
                     horizontal
                     showsHorizontalScrollIndicator={false}
                     pagingEnabled
@@ -57,7 +64,6 @@ export default function Onboarding() {
                         useNativeDriver: false,
                     })}
                     scrollEventThrottle={32}
-                    onViewableItemsChanged={viewableItemsChanged}
                     ref={slidesRef}
                 />
             </View>
