@@ -6,7 +6,7 @@ export default function OnboardingItem({ item }) {
     const { width } = useWindowDimensions()
 
     return (
-        <S.Container style={[{ width, paddingHorizontal: 10 }]}>
+        <S.Container style={[{ width, paddingHorizontal: 18 }]}>
             <S.Image source={item.image} style={[{ width, resizeMode: 'contain' }]} />
 
             <View style={{ flex: 0.3 }}>
