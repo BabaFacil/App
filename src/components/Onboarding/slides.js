@@ -2,26 +2,26 @@
 export default [
     {
         id: "1",
-        title: "1 screen",
-        description: "1 screen description",
+        title: "Encontre a babá perfeita",
+        description: "Com a nossa seleção de babás você terá segurança e facilidade na hora de encontrar sua babá",
         image: require("../../assets/imgs/logo-text2.png")
     },
     {
         id: "2",
-        title: "2 screen",
-        description: "2 screen description",
+        title: "Sempre perto de você!",
+        description: "Nós priorizamos babás com localização perto da sua",
         image: require("../../assets/imgs/logo-text2.png")
     },
     {
         id: "3",
-        title: "3 screen",
-        description: "3 screen description",
+        title: "Serviço 24/7",
+        description: "Garantimos que sempre terá uma babá disponivel quando você precisar!",
         image: require("../../assets/imgs/logo-text2.png")
     },
     {
         id: "4",
-        title: "4 screen",
-        description: "4 screen description",
+        title: "Crie sua conta!",
+        description: "Em segundos você já poderá navegar por diversas babás qualificadas! Vamos?",
         image: require("../../assets/imgs/logo-text2.png")
     },
 

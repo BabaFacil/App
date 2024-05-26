@@ -12,13 +12,17 @@ export const Image = styled.Image`
 `
 
 export const Title = styled.Text`
-    font-size: 28px;
+    font-size: 26px;
     margin-bottom: 10px;
     text-align: center;
+    font-family: ${({theme})=> theme.FONT.BOLD};
+    color: ${({theme})=> theme.COLORS.TEXT_PRIMARY};
 `
 
 export const Description = styled.Text`
-    font-size: 20px;
+    font-size: 14px;
     padding: 0 10px 0 10px;
+    font-family: ${({theme})=> theme.FONT.MEDIUM};
+    color: #656565;
     text-align: center;
 `
