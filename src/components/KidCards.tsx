@@ -1,5 +1,5 @@
 
-import { View, Text, StyleSheet, Image, TouchableOpacity } from 'react-native'
+import { View, Text, StyleSheet, Image, TouchableOpacity, ImageSourcePropType } from 'react-native'
 import { useFonts, OpenSans_400Regular, OpenSans_700Bold } from '@expo-google-fonts/open-sans'
 import React from 'react'
 
@@ -55,7 +55,7 @@ const KidCards = ({onPress, nome, idade, genero, img }: defaultProps) => {
     return (
         <TouchableOpacity onPress={onPress} style={styles.kids}>
             <Image
-                source={imagePaths[img]}
+                source={img as ImageSourcePropType}
                 style={{ height: 240, width: '100%', borderRadius: 10 }}
                 resizeMode='cover'
             />

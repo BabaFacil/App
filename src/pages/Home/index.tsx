@@ -7,10 +7,11 @@ import { MaterialIcons } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
 import { EyeOff, Pencil, Trash2 } from 'lucide-react-native';
 import React, { useRef, useState } from 'react';
-import { Dimensions, ImageBackground, Text, View } from 'react-native';
+import { Dimensions, ImageBackground, ImageSourcePropType, Text, View } from 'react-native';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import { Modalize } from 'react-native-modalize';
 import { useTheme } from 'styled-components/native';
+import childData from '@/mocks/childData.mocks';
 
 import * as S from './styles';
 import { Separator } from '../PreChat/styles';
@@ -24,66 +25,7 @@ export default function Home() {
   const theme = useTheme()
   const modalRef = useRef(null)
 
-  const imagePaths = {
-    'imgBoy': require('@/assets/imgs/littleboy.png'),
-    'imgGirl': require('@/assets/imgs/littlegirl.png'),
-  };
-  const DATA = [
-    {
-      id: 1,
-      name: 'Fernanda Alyssa Fernandes da Silva',
-      idade: '8',
-      genero: 'm',
-      img: 'imgBoy',
-      status: 'online',
-      babySitter: 'Claudia',
-    },
-    {
-      id: 3,
-      name: 'Ana',
-      idade: '8',
-      genero: 'f',
-      img: 'imgGirl',
-      status: 'offline',
-      babySitter: '',
-    },
-    {
-      id: 4,
-      name: 'davi',
-      idade: '8',
-      genero: 'm',
-      img: 'imgBoy',
-      status: 'online',
-      babySitter: 'Nicole',
-    },
-    {
-      id: 5,
-      name: 'AAAA',
-      idade: '8',
-      genero: 'm',
-      img: 'imgBoy',
-      status: 'offline',
-      babySitter: '',
-    },
-    {
-      id: 6,
-      name: 'davi',
-      idade: '8',
-      genero: 'm',
-      img: 'imgBoy',
-      status: 'online',
-      babySitter: 'Song Ha Young da Silva',
-    },
-    {
-      id: 7,
-      name: 'AAAA',
-      idade: '8',
-      genero: 'm',
-      img: 'imgBoy',
-      status: 'offline',
-      babySitter: '',
-    },
-  ]
+  
 
   let [currentData, setCurrentData] = useState({
     id: 0,
@@ -126,7 +68,7 @@ export default function Home() {
         <S.DockKids
           style={{ flex: 1, flexGrow: 1 }}
           contentContainerStyle={{ paddingBottom: 200 }}
-          data={DATA}
+          data={childData}
           numColumns={2}
           keyExtractor={(item: any) => item.id}
           renderItem={({ item }: any) =>
@@ -138,14 +80,15 @@ export default function Home() {
                 name: item.name,
                 idade: item.idade,
                 genero: item.genero,
-                img: item.img,
+                img: item.image,
                 status: item.status,
                 babySitter: item.babySitter
               })
 
               modalRef.current?.open();
 
-            }} nome={item.name} idade={item.idade} genero={item.genero} img={item.img} />
+            }}
+            nome={item.name} idade={item.idade} genero={item.genero} img={item.image} />
 
           }
         />
@@ -167,7 +110,7 @@ export default function Home() {
         handlePosition='inside'
       >
         <ImageBackground
-          source={imagePaths[currentData.img]}
+          source={currentData.img as ImageSourcePropType}
           style={{ height: height / 5, width: '100%' }}
           imageStyle={{ borderTopLeftRadius: 12, borderTopRightRadius: 12 }}
           blurRadius={5}
