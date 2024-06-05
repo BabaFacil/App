@@ -4,6 +4,7 @@ export const Container = styled.View`
         flex: 1;
         justify-content: center;
         align-items: center;
+        background-color: #fdf6f7;
     
 `
 export const Image = styled.Image`
