@@ -1,7 +1,8 @@
 {
   "compilerOptions": {
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": ["./src/*"],
+      "@/onboarding/*": ["./src/assets/imgs/onboarding/*"]
     }
   },
   "extends": "expo/tsconfig.base",
