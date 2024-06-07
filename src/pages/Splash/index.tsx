@@ -1,23 +1,27 @@
-import { useNavigation } from '@react-navigation/native';
-import { ResizeMode, Video } from 'expo-av';
+import { useState } from 'react';
 import { StyleSheet } from 'react-native';
-import AsyncStorage from '@react-native-async-storage/async-storage';
 
-export default function Splash() {
-    const navigation = useNavigation();
+import { AVPlaybackStatus, ResizeMode, Video } from 'expo-av';
+import { hideAsync } from 'expo-splash-screen';
 
+type defaultProps ={
+    onComplete: (status: boolean) => void
+    loading: any
+}
+
+export default function Splash({onComplete, loading}: defaultProps) {
+    const [lastStatus, setStatus] = useState<AVPlaybackStatus>({}as AVPlaybackStatus)
     const splash = require('@/assets/imgs/splash.mp4')
     
-    async function onPlaybackStatusUpdate(status) {
+    async function onPlaybackStatusUpdate(status: AVPlaybackStatus) {
 
-        if (status.didJustFinish) {
-            const response = await AsyncStorage.getItem("@viewedonboarding")
-            if(response){
-                navigation.navigate('SignIn' as never)
-            }else{
-                navigation.navigate('Welcome' as never)
+        if (status.isLoaded) {
+            if(lastStatus.isLoaded !== status.isLoaded){
+                hideAsync()
             }
-
+            if(status.didJustFinish){
+                loading ? onComplete(false) : onComplete(true)
+            }
         }
     }
     return (
@@ -25,7 +29,7 @@ export default function Splash() {
             style={StyleSheet.absoluteFill}
             resizeMode={ResizeMode.COVER}
             source={splash}
-            isLooping={false}
+            isLooping={true}
             onPlaybackStatusUpdate={onPlaybackStatusUpdate}
             shouldPlay={true}
         />
