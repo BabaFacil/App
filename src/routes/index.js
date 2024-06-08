@@ -1,24 +1,23 @@
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import { DefaultTheme } from "@react-navigation/native";
 
 import * as ROUTES from "../pages";
-import { DefaultTheme } from "@react-navigation/native";
 
 const Stack = createNativeStackNavigator();
 
 export default function Routes({ viewedOnBoard }) {
     return (
         <Stack.Navigator screenOptions={{ detachPreviousScreen: true, presentation: "transparentModal" }} theme={DefaultTheme.colors.background}  >
-            <Stack.Screen
-                name="Splash"
-                component={ROUTES.Splash}
+            {viewedOnBoard ? <Stack.Screen
+                name="SignIn?via=onboarding"
+                component={ROUTES.SignIn}
                 options={{ headerShown: false }}
-            />
-
-            <Stack.Screen
-                name="Welcome"
-                component={ROUTES.Welcome}
-                options={{ headerShown: false }}
-            />
+            /> :
+                <Stack.Screen
+                    name="Welcome"
+                    component={ROUTES.Welcome}
+                    options={{ headerShown: false }}
+                />}
 
             <Stack.Screen
                 name="SignIn"
@@ -71,22 +70,22 @@ export default function Routes({ viewedOnBoard }) {
                 options={{ headerShown: false }}
             />
 
-            <Stack.Screen 
+            <Stack.Screen
                 name="Account"
                 component={ROUTES.Account}
-                options={{headerShown: false}}
+                options={{ headerShown: false }}
             />
 
-            <Stack.Screen 
+            <Stack.Screen
                 name="AccountInfo"
                 component={ROUTES.AccountInfo}
-                options={{headerShown: false}}
+                options={{ headerShown: false }}
             />
 
             <Stack.Screen
                 name="AccountEdit"
                 component={ROUTES.AccountEdit}
-                options={{headerShown: false}}
+                options={{ headerShown: false }}
             />
 
         </Stack.Navigator>
