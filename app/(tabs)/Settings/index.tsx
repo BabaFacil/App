@@ -6,11 +6,9 @@ import React from 'react';
 import { Text, TouchableOpacity, View } from 'react-native';
 import { ThemeContext } from 'styled-components';
 import Card from '@/components/Card';
-<MenuBar TelaAtiva={'home'} />
 import * as S from './styles';
 import { useTheme } from 'styled-components/native';
 import { router } from 'expo-router';
-import MenuBar from '@/components/MenuBar';
 
 
 export default function Settings() {
@@ -163,7 +161,6 @@ export default function Settings() {
 
                 </S.Container>
             </S.BackgoundContainer>
-            <MenuBar TelaAtiva={'settings'} />
         </>
     )
 }

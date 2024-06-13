@@ -15,7 +15,6 @@ import ChildStatus from '@/components/ChildStatus';
 import KidCards from '@/components/KidCards';
 import { Separator } from '../PreChat/styles';
 import * as S from './styles';
-import MenuBar from '@/components/MenuBar';
 
 
 export default function Home() {
@@ -98,7 +97,7 @@ export default function Home() {
       <S.AddBtn onPress={() => { navigation.navigate('RegisterChild' as never) }}>
         <Text style={{ fontSize: 25, color: '#fff' }}>+</Text>
       </S.AddBtn>
-      <MenuBar TelaAtiva={'home'} />
+
       <Modalize
         ref={modalRef}
         snapPoint={height / 2}
@@ -147,7 +146,7 @@ export default function Home() {
       
       </Modalize>
     </GestureHandlerRootView>
-  
+
   )
 }
 

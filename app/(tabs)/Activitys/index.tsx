@@ -3,7 +3,6 @@ import { Text, ScrollView } from 'react-native';
 import * as S from './styles';
 import ActivityCards from '@/components/ActivityCards/ActivityCards';
 import { OpenSans_400Regular, OpenSans_500Medium, OpenSans_700Bold, useFonts } from '@expo-google-fonts/open-sans';
-import MenuBar from '@/components/MenuBar';
 
 export default function Activitys() {
   let [fontsLoaded] = useFonts({
@@ -35,7 +34,6 @@ export default function Activitys() {
 
         </ScrollView>
       </S.DockGlobal>
-      <MenuBar TelaAtiva={'atividade'} />
     </S.Container>
   )
 }

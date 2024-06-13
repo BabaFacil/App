@@ -1,15 +1,12 @@
-import { default as React } from 'react'
-import { Text, View } from 'react-native'
-
 import { OpenSans_400Regular, OpenSans_500Medium, OpenSans_700Bold, useFonts } from '@expo-google-fonts/open-sans'
 import { Search } from 'lucide-react-native'
+import { default as React } from 'react'
+import { Text, View } from 'react-native'
 import { GestureHandlerRootView, ScrollView, TouchableOpacity } from 'react-native-gesture-handler'
 import { ThemeContext } from 'styled-components'
-
+import PreChatCard from '@/components/PreChatCard'
 import * as S from './styles'
 import { useTheme } from 'styled-components/native'
-import PreChatCard from '@/components/PreChatCard'
-import MenuBar from '@/components/MenuBar'
 
 export default function PreChat() {
     const theme = useTheme()
@@ -102,7 +99,6 @@ export default function PreChat() {
                     </GestureHandlerRootView>
                 </S.DockGlobal>
             </S.Container>
-            <MenuBar TelaAtiva='chat' />
         </>
     )
 }
