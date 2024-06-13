@@ -18,8 +18,8 @@ interface defaultProps {
 export default function PreChatCard({ name, lastMessage, lastMassageDate, photo, newMsgCount, isNewMessage, sent, isSender }: defaultProps) {
     const theme = useTheme()
     const imagePaths = {
-        'baba1': require('../../assets/imgs/baba1.png'),
-        'baba2': require('../../assets/imgs/baba2.png'),
+        'baba1': require('@/assets/imgs/baba1.png'),
+        'baba2': require('@/assets/imgs/baba2.png'),
     };
 
     return (

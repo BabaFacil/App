@@ -10,6 +10,7 @@ import slides from './slides'
 import { Container } from './styles'
 import { useNavigation } from '@react-navigation/native';
 import { useTheme } from 'styled-components/native';
+import { router } from 'expo-router';
 
 export default function Onboarding() {
     const navigation = useNavigation();
@@ -31,7 +32,7 @@ export default function Onboarding() {
         if(currentIndex === slides.length -1){
             try {
                 await AsyncStorage.setItem("@viewedonboarding", "true")
-                navigation.navigate('SignIn' as never) 
+                router.replace('/SignIn')
                 return
             } catch (e) {
                 console.log(e);

@@ -29,8 +29,8 @@ const ActivityCards = ({nomeBaba, dataAtc, horaInicio, horaFim, valor,  img }: d
     }
 
     const imagePaths = {
-        'baba1': require('../../assets/imgs/baba1.png'),
-        'baba2': require('../../assets/imgs/baba2.png'),
+        'baba1': require('@/assets/imgs/baba1.png'),
+        'baba2': require('@/assets/imgs/baba2.png'),
     };
 
 
