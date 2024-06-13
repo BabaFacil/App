@@ -6,9 +6,11 @@ import React from 'react';
 import { Text, TouchableOpacity, View } from 'react-native';
 import { ThemeContext } from 'styled-components';
 import Card from '@/components/Card';
-import MenuBar from '@/components/MenuBar';
+<MenuBar TelaAtiva={'home'} />
 import * as S from './styles';
 import { useTheme } from 'styled-components/native';
+import { router } from 'expo-router';
+import MenuBar from '@/components/MenuBar';
 
 
 export default function Settings() {
@@ -40,7 +42,7 @@ export default function Settings() {
                     <S.PrincipalText >Configurações e Privacidade</S.PrincipalText>
                     <Card title="Conta">
 
-                        <S.ButtonNav onPress={() => { navigation.navigate('Account' as never) }}>
+                        <S.ButtonNav onPress={() => { router.push('./Account')}}>
                             <S.Nav>
                                 <Text>
                                     <Ionicons name="person-sharp" color={theme.COLORS.ICON} size={16} />
@@ -83,7 +85,7 @@ export default function Settings() {
 
 
                     <Card title="Conteudo e Interface">
-                        <S.ButtonNav  onPress={() => { navigation.navigate('DarkModeSwitch' as never) }}>
+                        <S.ButtonNav  onPress={() => { router.push('./DarkModeSwitch') }}>
                             <S.Nav>
                                 <Text>
                                     <Moon strokeWidth={1} fill={theme.COLORS.ICON} color={theme.COLORS.ICON} size={16} />
@@ -161,7 +163,7 @@ export default function Settings() {
 
                 </S.Container>
             </S.BackgoundContainer>
-            <MenuBar TelaAtiva={'config'} />
+            <MenuBar TelaAtiva={'settings'} />
         </>
     )
 }

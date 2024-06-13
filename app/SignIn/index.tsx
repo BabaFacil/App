@@ -1,13 +1,16 @@
 import React, { useRef } from 'react';
 import { Image, Text } from 'react-native';
 
-import BtnC from '@/components/CustomButton';
-import { OpenSans_400Regular, OpenSans_700Bold, useFonts } from '@expo-google-fonts/open-sans';
-import { useNavigation } from '@react-navigation/native';
 import * as Animatable from 'react-native-animatable';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
+import { OpenSans_400Regular, OpenSans_700Bold, useFonts } from '@expo-google-fonts/open-sans';
+import { router } from 'expo-router';
+import { useNavigation } from '@react-navigation/native';
 import { Modalize } from 'react-native-modalize';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+
 import * as S from './styles';
+import BtnC from '@/components/CustomButton';
 
 
 export default function SignIn() {
@@ -32,7 +35,7 @@ export default function SignIn() {
                 <S.ContainerLogo>
                     <Animatable.View animation='fadeInDown' delay={600} style={{ alignItems: 'center' }}>
                         <Image
-                            source={require('../../assets/imgs/logo-text2.png')}
+                            source={require('@/assets/imgs/logo-text2.png')}
                             style={{ width: '90%' }}
                             resizeMode='contain'
                         />
@@ -61,6 +64,7 @@ export default function SignIn() {
                         }}
                         onPress={(event) => {
                             event.persist();
+                            AsyncStorage.removeItem("@viewedonboarding")
                             modalLoginRef.current?.open();
 
                         }}
@@ -89,7 +93,7 @@ export default function SignIn() {
                         onPress={(event) => {
                             console.log(event);
                             event.persist();
-                            navigation.navigate('Home' as never)
+                            router.replace('/Home')
                         }}
                     />
                 </Modalize>
@@ -105,23 +109,23 @@ export default function SignIn() {
                         colorText='#fff'
                         onPress={(event) => {
                             event.persist();
-                            navigation.navigate('AccountCreation' as never)
+                            router.push('/AccountCreation')
                         }}
                     />
-                    <BtnC
-                        buttonText='Babá'
-                        btnColor='transparent'
-                        colorText='#E96181'
-                        additionalStyles={{
-                            borderRadius: 10,
-                            borderWidth: 2,
-                            borderColor: '#E96181',
-                        }}
-                        onPress={(event) => {
-                            event.persist();
-                            navigation.navigate('AccountCreation' as never)
-                        }}
-                    />
+                        <BtnC
+                            buttonText='Babá'
+                            btnColor='transparent'
+                            colorText='#E96181'
+                            additionalStyles={{
+                                borderRadius: 10,
+                                borderWidth: 2,
+                                borderColor: '#E96181',
+                            }}
+                            onPress={(event) => {
+                                event.persist();
+                                router.push('/AccountCreation')
+                            }}
+                        />
                 </Modalize>
             </S.Container>
         </GestureHandlerRootView>

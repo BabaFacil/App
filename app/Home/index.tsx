@@ -1,20 +1,22 @@
-import ChildStatus from '@/components/ChildStatus';
-import KidCards from '@/components/KidCards';
-import MenuBar from '@/components/MenuBar';
 
+import React, { useRef, useState } from 'react';
+
+import { useNavigation } from '@react-navigation/native';
 import { OpenSans_400Regular, OpenSans_500Medium, OpenSans_700Bold, useFonts } from '@expo-google-fonts/open-sans';
 import { MaterialIcons } from '@expo/vector-icons';
-import { useNavigation } from '@react-navigation/native';
 import { EyeOff, Pencil, Trash2 } from 'lucide-react-native';
-import React, { useRef, useState } from 'react';
 import { Dimensions, ImageBackground, ImageSourcePropType, Text, View } from 'react-native';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import { Modalize } from 'react-native-modalize';
 import { useTheme } from 'styled-components/native';
-import childData from '@/mocks/childData.mocks';
 
-import * as S from './styles';
+import childData from '@/mocks/childData.mocks';
+import ChildStatus from '@/components/ChildStatus';
+import KidCards from '@/components/KidCards';
 import { Separator } from '../PreChat/styles';
+import * as S from './styles';
+import MenuBar from '@/components/MenuBar';
+
 
 export default function Home() {
 
@@ -97,7 +99,6 @@ export default function Home() {
         <Text style={{ fontSize: 25, color: '#fff' }}>+</Text>
       </S.AddBtn>
       <MenuBar TelaAtiva={'home'} />
-
       <Modalize
         ref={modalRef}
         snapPoint={height / 2}
@@ -146,7 +147,7 @@ export default function Home() {
       
       </Modalize>
     </GestureHandlerRootView>
-
+  
   )
 }
 

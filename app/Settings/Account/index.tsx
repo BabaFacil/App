@@ -6,9 +6,9 @@ import { Image, Text, TouchableOpacity, View } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { useTheme } from 'styled-components/native';
 
-import Card from "../../components/Card";
-import MenuBar from "../../components/MenuBar";
+import Card from "@/components/Card";
 import * as S from './styles';
+import { router } from 'expo-router';
 
 export default function Account() {
 
@@ -25,8 +25,8 @@ export default function Account() {
       }
 
       const imagePaths = {
-        'baba1': require('../../assets/imgs/baba1.png'),
-        'baba2': require('../../assets/imgs/baba2.png'),
+        'baba1': require('@/assets/imgs/baba1.png'),
+        'baba2': require('@/assets/imgs/baba2.png'),
     };
 
 
@@ -42,9 +42,9 @@ export default function Account() {
             <S.Container>
                 <S.PrincipalText >Perfil</S.PrincipalText>
 
-                <S.UserImageNickname onPress={() => { navigation.navigate('AccountInfo' as never) }}>
+                <S.UserImageNickname onPress={() => { router.push('./AccountInfo') }}>
                     <Image
-                        source={require('../../assets/imgs/baba1.png')}
+                        source={require('@/assets/imgs/baba1.png')}
                         style={{ height: 90, width: 90, borderRadius: 90}}
                         resizeMode='cover'
                     />
@@ -82,7 +82,6 @@ export default function Account() {
 
             </S.Container>
 
-            <MenuBar TelaAtiva={'config'} />
         </S.BackgoundContainer>
   )
 }

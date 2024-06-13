@@ -43,7 +43,7 @@ export default function AccountCreation() {
         
         <S.LogoContent>
           <Image
-            source={require('../../assets/imgs/logoFull.png')}
+            source={require('@/assets/imgs/logoFull.png')}
             style={{ width: '40%', padding: 5 }}
             resizeMode='contain'
           />

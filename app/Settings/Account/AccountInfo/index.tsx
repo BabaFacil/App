@@ -6,9 +6,9 @@ import { Image, Text, TouchableOpacity, View } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { useTheme } from 'styled-components/native';
 
-import Card from "../../components/Card";
-import MenuBar from "../../components/MenuBar";
+import Card from "@/components/Card";
 import * as S from './styles';
+import { router } from 'expo-router';
 
 export default function Account() {
 
@@ -25,8 +25,8 @@ export default function Account() {
       }
 
       const imagePaths = {
-        'baba1': require('../../assets/imgs/baba1.png'),
-        'baba2': require('../../assets/imgs/baba2.png'),
+        'baba1': require('@/assets/imgs/baba1.png'),
+        'baba2': require('@/assets/imgs/baba2.png'),
     };
 
 
@@ -42,7 +42,7 @@ export default function Account() {
 
                 <S.UserImageNickname>
                     <Image
-                        source={require('../../assets/imgs/baba1.png')}
+                        source={require('@/assets/imgs/baba1.png')}
                         style={{ height: 150, width: 150, borderRadius: 90}}
                         resizeMode='cover'
                     />
@@ -52,7 +52,7 @@ export default function Account() {
                 </S.UserImageNickname>
 
                 <Card title = "Informações da conta">
-                    <S.ButtonNav onPress={() => { navigation.navigate('AccountEdit' as never, {title: 'Nome'}) }}>
+                    <S.ButtonNav onPress={() => { router.push({pathname: './AccountEdit/[edit]', params: {title: 'nome'}}) }}>
                         <S.Nav>
                             <S.Text>Nome de Usuário </S.Text>
                             <S.InfoText>Kakashi Hatake</S.InfoText>
@@ -60,7 +60,7 @@ export default function Account() {
                         <Text><ChevronRight color="#8A8A8A" size={16} style={{ justifyContent: "flex-end" }} /></Text>
                     </S.ButtonNav>
 
-                    <S.ButtonNav onPress={() => { navigation.navigate('AccountEdit' as never, {title: 'E-mail'}) }}>
+                    <S.ButtonNav onPress={() => { router.push({pathname: './AccountEdit/[edit]', params: {title: 'email'}}) }}>
                         <S.Nav>
                             <S.Text>E-mail</S.Text>
                             <S.InfoText>kakashi.htake@outlook.com</S.InfoText>
@@ -68,7 +68,7 @@ export default function Account() {
                         <Text><ChevronRight color="#8A8A8A" size={16} style={{ justifyContent: "flex-end" }} /></Text>
                     </S.ButtonNav>
 
-                    <S.ButtonNav onPress={() => { navigation.navigate('AccountEdit' as never, {title: 'Telefone'}) }}>
+                    <S.ButtonNav onPress={() => { router.push({pathname: './AccountEdit/[edit]', params: {title: 'telefone'}}) }}>
                         <S.Nav>
                             <S.Text>Telefone</S.Text>
                             <S.InfoText>+55 11 98180-5816</S.InfoText>
@@ -76,7 +76,7 @@ export default function Account() {
                         <Text><ChevronRight color="#8A8A8A" size={16} style={{ justifyContent: "flex-end" }} /></Text>
                     </S.ButtonNav>
 
-                    <S.ButtonNav onPress={() => { navigation.navigate('AccountEdit' as never, {title: 'Data de Nascimento'}) }}>
+                    <S.ButtonNav onPress={() => { router.push({pathname: './AccountEdit/[edit]', params: {title: 'data de nascimento'}}) }}>
                         <S.Nav>
                             <S.Text>Data de nascimento</S.Text>
                             <S.InfoText>17/10/2002</S.InfoText>
@@ -91,7 +91,7 @@ export default function Account() {
                         </S.Nav>
                     </S.ButtonNavView>
 
-                    <S.ButtonNav onPress={() => { navigation.navigate('AccountEdit' as never, {title: 'Senha'}) }}>
+                    <S.ButtonNav onPress={() => { router.push({pathname: './AccountEdit/[edit]', params: {title: 'senha'}}) }}>
                         <S.Nav>
                             <S.Text>Senha</S.Text>
                         </S.Nav>
@@ -102,7 +102,6 @@ export default function Account() {
 
             </S.Container>
 
-            <MenuBar TelaAtiva={'config'} />
         </S.BackgoundContainer>
   )
 }
