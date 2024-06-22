@@ -26,6 +26,12 @@ export default function Routes({ viewedOnBoard }) {
             />
 
             <Stack.Screen
+                name = "SignUp"
+                component={ROUTES.SignUp}
+                options ={{headerShown: false}}
+            />
+
+            <Stack.Screen
                 name='Home'
                 component={ROUTES.Home}
                 options={{ headerShown: false }}
