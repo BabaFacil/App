@@ -18,13 +18,5 @@ export default [
             {input: 'Confirmar Senha'}
         ]
     },
-    {
-        id: "3",
-        title: "Foto de Perfil",
-        labels:[
-            {input: 'seila'}
-        ],
-        photoInput: true
-    },
 
 ]

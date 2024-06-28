@@ -1,7 +1,7 @@
-import React from 'react'
 import Card from '@/components/Card';
-import { useWindowDimensions, View } from 'react-native'
-import * as S from '@/pages/SignUp/styles'
+import * as S from '@/pages/SignUp/styles';
+import React from 'react';
+import { useWindowDimensions } from 'react-native';
 import { useTheme } from 'styled-components/native';
 
 
@@ -10,7 +10,7 @@ export default function OnboardingItem({ item }) {
     const { width } = useWindowDimensions()
 
     return (
-        <S.Container style={[{ width, paddingHorizontal: 18 }]}>
+        <S.Container style={[{ width}]}>
             <S.PrincipalText >{item.title}</S.PrincipalText>
             {item.labels.map((label, index) => (
                 
