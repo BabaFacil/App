@@ -45,7 +45,7 @@ const styles = StyleSheet.create({
 
     if(disable){
         return (
-            <TouchableOpacity onPress={onPress} style={styles.buttonDisable}>
+            <TouchableOpacity style={styles.buttonDisable}>
                 <Text style={styles.buttonText}>{buttonText}</Text>
             </TouchableOpacity>
         )

@@ -47,10 +47,12 @@ export const Nav = styled.View`
     align-items: center;
 `;
 
+
 export const Text = styled.Text`
     color: ${({theme})=> theme.COLORS.TEXT_PRIMARY};
-    margin-left: 20px;
-    margin-top: 30px;
+    text-align: justify;
+    margin: 20px;
+    margin-top: 200px;
     font-family: 'OpenSans_500Medium';
     font-size: 14px;
 `
@@ -58,5 +60,15 @@ export const Text = styled.Text`
 export const TextInput = styled.TextInput`
     width: 90%;
     color: ${({theme})=> theme.COLORS.TEXT_SMALL};
+`
+
+
+export const UserImageNickname = styled.TouchableOpacity`
+    marginTop: 15%;
+    marginRight: 30%;
+    width: 100%;
+    flexDirection: row; 
+    justifyContent: center;
+    alignItems: center;
 `
 

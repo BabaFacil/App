@@ -1,7 +1,8 @@
 import BtnC from '@/components/CustomButton';
 import SignFormItens from '@/components/SignForm/SignFormItens';
 import form from '@/components/SignForm/form';
-import AsyncStorage from '@react-native-async-storage/async-storage';
+import SignImageUpload from '@/components/SignForm/SignImageUpload';
+// import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useNavigation } from '@react-navigation/native';
 import { ArrowLeft } from 'lucide-react-native';
 import React, { useEffect, useRef, useState } from 'react';
@@ -14,6 +15,7 @@ export default function SignUp() {
   const theme = useTheme();
 
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [inputValues, setInputValues] = useState([]);
   const scrollX = useRef(new Animated.Value(0)).current;
 
   const formRef = useRef(null);
@@ -25,16 +27,20 @@ export default function SignUp() {
     })
   }, [currentIndex])
 
-  const scrollTo = async () => {
-    if (currentIndex === form.length - 1) {
-      try {
-        await AsyncStorage.setItem("@viewedonboarding", "true")
-        navigation.navigate('SignIn' as never)
-        return
-      } catch (e) {
-        console.log(e);
+  const handleInputChange = (values, index) => {
+    const newValues = [...inputValues];
+    newValues[index] = values;
+    setInputValues(newValues);
+  }
 
-      }
+  const areInputsFilled = () => {
+    return inputValues[currentIndex]?.every(value => value !== '');
+  };
+
+  const scrollTo = async () => {
+
+    if (!areInputsFilled()) {
+      alert("pera")
     }
 
 
@@ -55,33 +61,40 @@ export default function SignUp() {
       </View>
 
       <S.Container>
-        <FlatList
-          data={form}
-          renderItem={({ item }) => <SignFormItens item={item} />}
-          initialScrollIndex={0}
-          horizontal
-          showsHorizontalScrollIndicator={false}
-          pagingEnabled
-          scrollEnabled={false}
-          bounces={false}
-          keyExtractor={(item) => item.id}
-          onScroll={Animated.event([{ nativeEvent: { contentOffset: { x: scrollX } } }], {
-            useNativeDriver: false,
-          })}
-          scrollEventThrottle={32}
-          ref={formRef}
-        />
+        {currentIndex <= form.length - 1 ? (
+          <>
+            <FlatList
+              data={form}
+              renderItem={({ item, index }) => <SignFormItens item={item} onInputChange={(values) => handleInputChange(values, index)} />}
+              initialScrollIndex={0}
+              horizontal
+              showsHorizontalScrollIndicator={false}
+              pagingEnabled
+              scrollEnabled={false}
+              bounces={false}
+              keyExtractor={(item) => item.id}
+              onScroll={Animated.event([{ nativeEvent: { contentOffset: { x: scrollX } } }], {
+                useNativeDriver: false,
+              })}
+              scrollEventThrottle={32}
+              ref={formRef}
+            />
 
-        <BtnC
-          buttonText="Proximo"
-          btnColor='#E96181'
-          colorText='#FFF'
-          disable = {true}
-          additionalStyles={{
-            marginTop: 215,
-        }}
-          onPress={scrollTo}
-        />
+            <BtnC
+              buttonText="Proximo"
+              btnColor='#E96181'
+              colorText='#FFF'
+              disable={!areInputsFilled()}
+              additionalStyles={{
+                marginTop: 215,
+              }}
+              onPress={scrollTo}
+            />
+          </>
+        ) : (
+          <SignImageUpload />
+        )}
+
       </S.Container>
 
 
