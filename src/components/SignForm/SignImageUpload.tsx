@@ -1,12 +1,10 @@
-import Card from '@/components/Card';
-import * as S from '@/pages/SignUp/styles';
-import React, { useEffect, useState } from 'react';
-import { useWindowDimensions } from 'react-native';
-import { useTheme } from 'styled-components/native';
-import { useNavigation } from '@react-navigation/native';
-import { Image, Alert, TouchableOpacity } from 'react-native';
-import { launchImageLibrary } from 'react-native-image-picker';
 import BtnC from '@/components/CustomButton';
+import * as S from '@/pages/SignUp/styles';
+import { useNavigation } from '@react-navigation/native';
+import { useState } from 'react';
+import { Alert, Image, TouchableOpacity, useWindowDimensions } from 'react-native';
+import { launchImageLibrary } from 'react-native-image-picker';
+import { useTheme } from 'styled-components/native';
 
 
 export default function SignImageUpload() {
@@ -35,7 +33,7 @@ export default function SignImageUpload() {
                 <TouchableOpacity onPress={selectImage}>
                     <Image
                         source={{ uri: imageUri }}
-                        style={{ height: 150, width: 150, borderRadius: 90, backgroundColor: '#000' }}
+                        style={{ height: 250, width: 250, borderRadius: 125, backgroundColor: '#808080' }}
                         resizeMode='cover'
                     />
                 </TouchableOpacity>

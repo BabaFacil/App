@@ -52,7 +52,7 @@ export const Text = styled.Text`
     color: ${({theme})=> theme.COLORS.TEXT_PRIMARY};
     text-align: justify;
     margin: 20px;
-    margin-top: 200px;
+    margin-top: 150px;
     font-family: 'OpenSans_500Medium';
     font-size: 14px;
 `
@@ -65,9 +65,7 @@ export const TextInput = styled.TextInput`
 
 export const UserImageNickname = styled.TouchableOpacity`
     marginTop: 15%;
-    marginRight: 30%;
     width: 100%;
-    flexDirection: row; 
     justifyContent: center;
     alignItems: center;
 `
