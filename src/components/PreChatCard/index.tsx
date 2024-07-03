@@ -5,6 +5,7 @@ import * as S from './styles'
 import { useTheme } from 'styled-components/native';
 
 interface defaultProps {
+    onPress: (e:any) => void;
     name: string,
     lastMessage: string,
     lastMassageDate: string,
@@ -15,7 +16,7 @@ interface defaultProps {
     isNewMessage?: boolean
 }
 
-export default function PreChatCard({ name, lastMessage, lastMassageDate, photo, newMsgCount, isNewMessage, sent, isSender }: defaultProps) {
+export default function PreChatCard({onPress,name, lastMessage, lastMassageDate, photo, newMsgCount, isNewMessage, sent, isSender }: defaultProps) {
     const theme = useTheme()
     const imagePaths = {
         'baba1': require('@/assets/imgs/baba1.png'),
@@ -24,7 +25,7 @@ export default function PreChatCard({ name, lastMessage, lastMassageDate, photo,
 
     return (
         <>
-            <S.ButtonNav>
+            <S.ButtonNav onPress={onPress}>
                 <S.Nav>
                     <Image
                         source={imagePaths[photo]}
