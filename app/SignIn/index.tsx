@@ -48,8 +48,7 @@ export default function SignIn() {
                         btnColor='#E96181'
                         colorText='#FFF'
                         onPress={(event) => {
-                            event.persist();
-                            modalRegisterRef.current?.open();
+                            navigation.navigate('SignUp' as never)
                         }}
                     />
 
@@ -95,36 +94,6 @@ export default function SignIn() {
                             router.replace('/Home')
                         }}
                     />
-                </Modalize>
-
-                <Modalize ref={modalRegisterRef} snapPoint={300} modalHeight={300}>
-                    <S.TitleModal>
-                        Cadastro
-                    </S.TitleModal>
-
-                    <BtnC
-                        buttonText='Pai/Responsável'
-                        btnColor='#E96181'
-                        colorText='#fff'
-                        onPress={(event) => {
-                            event.persist();
-                            router.push('/AccountCreation')
-                        }}
-                    />
-                        <BtnC
-                            buttonText='Babá'
-                            btnColor='transparent'
-                            colorText='#E96181'
-                            additionalStyles={{
-                                borderRadius: 10,
-                                borderWidth: 2,
-                                borderColor: '#E96181',
-                            }}
-                            onPress={(event) => {
-                                event.persist();
-                                router.push('/AccountCreation')
-                            }}
-                        />
                 </Modalize>
             </S.Container>
         </GestureHandlerRootView>
