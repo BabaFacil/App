@@ -17,6 +17,7 @@ export const Header = styled.View`
 export const Name = styled.Text`
     color: ${({ theme }) => theme.COLORS.TEXT_PRIMARY};
     font-family: ${({ theme }) => theme.FONT.BOLD};
+    width: 66%;
     padding: 0 0 0 15px;
     font-size: 18px;
 `

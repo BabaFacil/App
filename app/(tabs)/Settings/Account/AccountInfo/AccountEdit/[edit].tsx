@@ -10,13 +10,14 @@ import { useTheme } from 'styled-components/native';
 import { ThemeContext, ThemeType } from '@/theme/Theme';
 import * as S from './styles';
 import Card from '@/components/Card';
+import Header from '@/components/ui/Header/Header';
 
 // FIXME:  Warning: React has detected a change in the order of Hooks called.
 //         This will lead to bugs and errors if not fixed.
 export default function AccountEdit() {
     const navigation = useNavigation();
     const themeUse = useTheme()
-    const { title } = useLocalSearchParams<{title:string}>()
+    const { title } = useLocalSearchParams<{ title: string }>()
 
     let [fontsLoaded] = useFonts({
         OpenSans_400Regular,
@@ -35,12 +36,7 @@ export default function AccountEdit() {
     return (
         <>
             <S.BackgoundContainer>
-                <View style={{ flexDirection: 'row', marginTop: 40, alignItems: "center" }}>
-                    <TouchableOpacity onPress={() => { router.back() }}><ArrowLeft strokeWidth={1} style={{ marginLeft: 10 }} color={themeUse.COLORS.ICON} size={28} /></TouchableOpacity>
-
-                    {/* TODO: Fazer o texto aparecer quando o usuário rolar a página */}
-                    <S.HeaderText >Informações da conta</S.HeaderText>
-                </View>
+            <Header text={"Informações da conta"}/>
 
                 <S.Container contentContainerStyle={{ paddingBottom: 200 }}>
                     <S.PrincipalText >{title}</S.PrincipalText>

@@ -9,6 +9,7 @@ import Card from '@/components/Card';
 import * as S from './styles';
 import { useTheme } from 'styled-components/native';
 import { router } from 'expo-router';
+import Header from '@/components/ui/Header/Header';
 
 
 export default function Settings() {
@@ -29,12 +30,7 @@ export default function Settings() {
     return (
         <>
             <S.BackgoundContainer>
-                <View style={{ flexDirection: 'row', marginTop: 40, alignItems: "center" }}>
-                    <TouchableOpacity onPress={() => { navigation.navigate('Home' as never) }}><ArrowLeft strokeWidth={1} style={{ marginLeft: 10 }} color={theme.COLORS.ICON} size={28} /></TouchableOpacity>
-
-                    {/* TODO: Fazer o texto aparecer quando o usuário rolar a página */}
-                    <S.HeaderText >Configurações e Privacidade</S.HeaderText>
-                </View>
+                <Header previousPage='Home' text={"Configurações e Privacidade"} />
 
                 <S.Container contentContainerStyle={{ paddingBottom: 200 }}>
                     <S.PrincipalText >Configurações e Privacidade</S.PrincipalText>

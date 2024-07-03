@@ -4,11 +4,13 @@ import { Tabs } from 'expo-router';
 export default function TabLayout() {
 
   return (
-    <Tabs screenOptions={{ tabBarActiveTintColor: '#E96181',tabBarInactiveTintColor: '#C8C8C8', headerShown: false, tabBarStyle:{
-      borderRadius: 15,
-    }, tabBarLabelStyle:{
-      fontSize: 12
-    } }}>
+    <Tabs screenOptions={{
+      tabBarActiveTintColor: '#E96181', tabBarInactiveTintColor: '#C8C8C8', headerShown: false, tabBarStyle: {
+        borderRadius: 15,
+      }, tabBarLabelStyle: {
+        fontSize: 12
+      }
+    }}>
       <Tabs.Screen
         name="Home/index"
         options={{
@@ -42,6 +44,12 @@ export default function TabLayout() {
       Exclude routes.
       This seems not to be the smartest way
       */}
+      <Tabs.Screen
+        name="PreChat/Chat/[id]"
+        options={{
+          href: null,
+        }}
+      />
       <Tabs.Screen
         name="Settings/Account/index"
         options={{

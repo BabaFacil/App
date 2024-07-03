@@ -64,7 +64,6 @@ export default function SignIn() {
                         }}
                         onPress={(event) => {
                             event.persist();
-                            AsyncStorage.removeItem("@viewedonboarding")
                             modalLoginRef.current?.open();
 
                         }}

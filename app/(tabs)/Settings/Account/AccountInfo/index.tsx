@@ -9,6 +9,7 @@ import { useTheme } from 'styled-components/native';
 import Card from "@/components/Card";
 import * as S from './styles';
 import { router } from 'expo-router';
+import Header from '@/components/ui/Header/Header';
 
 export default function Account() {
 
@@ -32,10 +33,7 @@ export default function Account() {
 
   return (
         <S.BackgoundContainer>
-            <View style={{ flexDirection: 'row', marginTop: 40, alignItems: "center" }}>
-                    <TouchableOpacity onPress={() => { navigation.navigate('Account' as never) }}><ArrowLeft strokeWidth={1} style={{ marginLeft: 10 }} color={theme.COLORS.ICON} size={28} /></TouchableOpacity>
-                    <S.HeaderText >Perfil</S.HeaderText>
-            </View>
+            <Header text={"Perfil"}/>
 
             <S.Container>
                 <S.PrincipalText >Informações da Conta</S.PrincipalText>

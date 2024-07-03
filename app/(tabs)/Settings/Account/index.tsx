@@ -9,11 +9,12 @@ import { useTheme } from 'styled-components/native';
 import Card from "@/components/Card";
 import * as S from './styles';
 import { router } from 'expo-router';
+import Header from '@/components/ui/Header/Header';
 
 export default function Account() {
 
     const navigation = useNavigation();
-    const theme = useTheme()
+
 
     let [fontsLoaded] = useFonts({
         OpenSans_400Regular,
@@ -30,15 +31,9 @@ export default function Account() {
     };
 
 
-  return (
+    return (
         <S.BackgoundContainer>
-            <View style={{ flexDirection: 'row', marginTop: 40, alignItems: "center" }}>
-                    <TouchableOpacity onPress={() => { navigation.navigate('Settings' as never) }}><ArrowLeft strokeWidth={1} style={{ marginLeft: 10 }} color={theme.COLORS.ICON} size={28} /></TouchableOpacity>
-
-                    {/* TODO: Fazer o texto aparecer quando o usuário rolar a página */}
-                    <S.HeaderText >Configurações e Privacidade</S.HeaderText>
-            </View>
-
+                <Header text={"Configurações e Privacidade"}/>
             <S.Container>
                 <S.PrincipalText >Perfil</S.PrincipalText>
 
@@ -83,5 +78,5 @@ export default function Account() {
             </S.Container>
 
         </S.BackgoundContainer>
-  )
+    )
 }

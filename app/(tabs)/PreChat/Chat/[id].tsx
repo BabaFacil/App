@@ -1,27 +1,32 @@
-import { useNavigation } from '@react-navigation/native'
-import { ArrowLeft, Camera, Phone, SendHorizontal, Video } from 'lucide-react-native'
 import React from 'react'
-import { Image, KeyboardAvoidingView, Text, TouchableOpacity, View } from 'react-native'
-import { ThemeContext } from 'styled-components'
-import * as S from './styles'
-import MenuBar from '../../components/MenuBar'
-import Message from '@/components/Message'
-import { GestureHandlerRootView, ScrollView } from 'react-native-gesture-handler'
+import { Image, TouchableOpacity, View } from 'react-native'
+
+import { useNavigation } from '@react-navigation/native'
+import { router, useLocalSearchParams } from 'expo-router'
+import { ArrowLeft, Camera, Phone, SendHorizontal, Video } from 'lucide-react-native'
+import { GestureHandlerRootView } from 'react-native-gesture-handler'
 import { useTheme } from 'styled-components/native'
+
+import Message from '@/components/Message'
+import DATA from '@/mocks/babysitterData.mock'
+import * as S from './styles'
 
 export default function Chat() {
     const navigation = useNavigation();
     let theme = useTheme()
+    const { id } = useLocalSearchParams<{id:string}>()
     const nannyPic = require('@/assets/imgs/baba1.png')
-
+    
+    const currentData = DATA.find(x => x.id === id);
+    
     return (<>
         <S.Container>
             <View style={{ flex: 1, justifyContent: "space-between", flexDirection: 'column', marginTop: 40 }}>
                 <S.Header>
-                    <TouchableOpacity onPress={() => { navigation.goBack() }}><ArrowLeft strokeWidth={1} color={theme.COLORS.TEXT_PRIMARY} size={28} /></TouchableOpacity>
+                    <TouchableOpacity onPress={() => { router.replace('/PreChat') }}><ArrowLeft strokeWidth={1} color={theme.COLORS.TEXT_PRIMARY} size={28} /></TouchableOpacity>
                     <View style={{ flexDirection: 'row', alignItems: "center" }}>
                         <Image source={nannyPic} style={{ height: 32, width: 32, borderRadius: 90 }} />
-                        <S.Name>Adriana Grande</S.Name>
+                        <S.Name numberOfLines={1} ellipsizeMode="middle">{currentData.name}</S.Name>
                     </View>
                     <View style={{ flexDirection: 'row', alignItems: "center" }}>
                         <TouchableOpacity>
@@ -54,7 +59,6 @@ export default function Chat() {
                     </TouchableOpacity>
                 </S.MessageInputContainer>
             </View>
-
         </S.Container>
 
     </>)
