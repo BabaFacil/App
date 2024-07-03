@@ -12,4 +12,4 @@ export { default as Settings } from './Settings'
 export { default as SignIn } from './SignIn'
 export { default as Splash } from './Splash'
 export { default as Welcome } from './Welcome'
-
+export { default as SignUp } from './SignUp'

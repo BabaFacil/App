@@ -1,5 +1,5 @@
-import { Text, View, StyleSheet, TouchableOpacity } from 'react-native'
-import React, { Component } from 'react'
+import React from 'react'
+import { StyleSheet, Text, TouchableOpacity } from 'react-native'
 
 interface defaultProps {
     onPress: (event: any) => void
@@ -7,9 +7,10 @@ interface defaultProps {
     colorText: string
     buttonText: string
     additionalStyles?: object
+    disable: boolean
 }
 
-const CustomButton = ({ onPress, btnColor,colorText,buttonText, additionalStyles }: defaultProps) => {
+const CustomButton = ({ onPress, btnColor, colorText, buttonText, additionalStyles, disable }: defaultProps) => {
 
 const styles = StyleSheet.create({
     button: {
@@ -22,6 +23,18 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         ...additionalStyles
     },
+
+    buttonDisable:{
+        borderRadius: 15,
+        textAlign: 'center',
+        backgroundColor: "#ffc0cb",
+        padding: 15,
+        margin: 15,
+        alignItems: 'center',
+        justifyContent: 'center',
+        ...additionalStyles
+    },
+
     buttonText: {
         fontSize: 18,
         fontWeight: 'bold',
@@ -29,7 +42,15 @@ const styles = StyleSheet.create({
       }
 
 })
-    
+
+    if(disable){
+        return (
+            <TouchableOpacity style={styles.buttonDisable}>
+                <Text style={styles.buttonText}>{buttonText}</Text>
+            </TouchableOpacity>
+        )
+    }
+
     return (
         <TouchableOpacity onPress={onPress} style={styles.button}>
             <Text style={styles.buttonText}>{buttonText}</Text>
