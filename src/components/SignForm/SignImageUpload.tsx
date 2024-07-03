@@ -1,5 +1,5 @@
 import BtnC from '@/components/CustomButton';
-import * as S from '@/pages/SignUp/styles';
+import * as S from '../../../app/SignUp/styles';
 import { useNavigation } from '@react-navigation/native';
 import { useState } from 'react';
 import { Alert, Image, TouchableOpacity, useWindowDimensions } from 'react-native';

@@ -48,7 +48,7 @@ export default function SignIn() {
                         btnColor='#E96181'
                         colorText='#FFF'
                         onPress={(event) => {
-                            navigation.navigate('SignUp' as never)
+                            router.replace('/SignUp')
                         }}
                     />
 

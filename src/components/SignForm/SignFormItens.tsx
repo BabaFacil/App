@@ -1,5 +1,5 @@
 import Card from '@/components/Card';
-import * as S from '@/pages/SignUp/styles';
+import * as S from '../../../app/SignUp/styles';
 import React, {useEffect, useState} from 'react';
 import { useWindowDimensions } from 'react-native';
 import { useTheme } from 'styled-components/native';
