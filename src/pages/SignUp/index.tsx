@@ -56,12 +56,16 @@ export default function SignUp() {
 
   return (
     <S.BackgoundContainer>
-      <View style={{ flexDirection: 'row', marginTop: 40, alignItems: "center" }}>
+      <View style={{marginLeft: 15, marginRight: 15, marginTop: 40}}>
+        <ProgressBar currentBar={currentIndex + 1} limitBar={3}/>
+      </View>
+
+      <View style={{ flexDirection: 'row', marginTop: 20, alignItems: "center" }}>
         <TouchableOpacity onPress={() => { navigation.navigate('SignIn' as never), setCurrentIndex(0) }}><ArrowLeft strokeWidth={1} style={{ marginLeft: 10 }} color={theme.COLORS.ICON} size={28} /></TouchableOpacity>
         <S.HeaderText >Cadastro</S.HeaderText>
       </View>
 
-      <ProgressBar currentBar={currentIndex + 1} limitBar={3}/>
+
 
       <S.Container>
         {currentIndex <= form.length - 1 ? (
@@ -89,7 +93,7 @@ export default function SignUp() {
               colorText='#FFF'
               disable={!areInputsFilled()}
               additionalStyles={{
-                marginTop: 215,
+                marginTop: 180,
               }}
               onPress={scrollTo}
             />

@@ -52,9 +52,9 @@ export const Text = styled.Text`
     color: ${({theme})=> theme.COLORS.TEXT_PRIMARY};
     text-align: justify;
     margin: 20px;
-    margin-top: 150px;
+    margin-top: 90px;
     font-family: 'OpenSans_500Medium';
-    font-size: 14px;
+    font-size: 15px;
 `
 
 export const TextInput = styled.TextInput`
