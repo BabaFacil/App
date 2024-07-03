@@ -8,14 +8,15 @@ import { useTheme } from "styled-components/native"
 interface defaultProps{
     previousPage?: string
     text: string
+    additionalStyles?: object 
 }
 
-export default function Header({text, previousPage}: defaultProps) {
+export default function Header({text, previousPage, additionalStyles}: defaultProps) {
     const theme = useTheme()
     console.log(previousPage);
     
     return (
-        <View style={{ flexDirection: 'row', marginTop: 40, alignItems: "center" }}>
+        <View style={{ flexDirection: 'row', marginTop: 40, alignItems: "center", ...additionalStyles }}>
             <GestureHandlerRootView>
                 <TouchableOpacity onPress={() => { router.push(previousPage || ".././") }}><ArrowLeft strokeWidth={1} style={{ marginLeft: 10 }} color={theme.COLORS.ICON} size={28} /></TouchableOpacity>
             </GestureHandlerRootView>
