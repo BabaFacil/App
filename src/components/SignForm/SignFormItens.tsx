@@ -10,11 +10,6 @@ export default function SignFormItens({ item, onInputChange }) {
     const { width } = useWindowDimensions()
     const [inputValues, setInputValues] = useState((Array(item.labels.length).fill('')))
 
-    // useEffect(()=>{
-    //     console.log("hahahaha");
-    //     setInputValues((Array(item.labels.length).fill('')));
-    // }, [])
-
 
     const handleInputChange = (text, index)=>{
         const newValues = [...inputValues];
