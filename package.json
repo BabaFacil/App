@@ -1,7 +1,7 @@
 {
   "name": "babafacilapp",
   "version": "1.0.0",
-  "main": "node_modules/expo/AppEntry.js",
+  "main": "node_modules/expo-router/entry",
   "scripts": {
     "start": "expo start",
     "android": "expo start --android",
@@ -14,11 +14,10 @@
     "@expo/vector-icons": "^14.0.0",
     "@react-native-async-storage/async-storage": "1.21.0",
     "@react-native-community/datetimepicker": "^8.0.1",
-    "@react-navigation/native": "^6.1.17",
-    "@react-navigation/native-stack": "^6.9.22",
     "expo": "~50.0.15",
     "expo-av": "~13.10.5",
     "expo-gesture-handler": "^0.0.0",
+    "expo-router": "^3.5.15",
     "expo-splash-screen": "~0.26.4",
     "expo-status-bar": "~1.11.1",
     "lucide-react-native": "^0.365.0",

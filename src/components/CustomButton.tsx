@@ -1,5 +1,5 @@
 import React from 'react'
-import { StyleSheet, Text, TouchableOpacity } from 'react-native'
+import { StyleSheet, Text, TouchableNativeFeedback, View } from 'react-native'
 
 interface defaultProps {
     onPress: (event: any) => void
@@ -7,7 +7,7 @@ interface defaultProps {
     colorText: string
     buttonText: string
     additionalStyles?: object
-    disable: boolean
+    disable?: boolean
 }
 
 const CustomButton = ({ onPress, btnColor, colorText, buttonText, additionalStyles, disable }: defaultProps) => {
@@ -45,16 +45,18 @@ const styles = StyleSheet.create({
 
     if(disable){
         return (
-            <TouchableOpacity style={styles.buttonDisable}>
+            <View style={styles.buttonDisable}>
                 <Text style={styles.buttonText}>{buttonText}</Text>
-            </TouchableOpacity>
+            </View>
         )
     }
 
     return (
-        <TouchableOpacity onPress={onPress} style={styles.button}>
-            <Text style={styles.buttonText}>{buttonText}</Text>
-        </TouchableOpacity>
+        <TouchableNativeFeedback onPress={onPress}>
+            <View style={styles.button}>
+                <Text style={styles.buttonText}>{buttonText}</Text>
+            </View>
+        </TouchableNativeFeedback>
     );
 };
 

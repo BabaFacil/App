@@ -1,5 +1,5 @@
 import Card from '@/components/Card';
-import * as S from '@/pages/SignUp/styles';
+import * as S from '../../../app/SignUp/styles';
 import React, {useEffect, useState} from 'react';
 import { useWindowDimensions } from 'react-native';
 import { useTheme } from 'styled-components/native';
@@ -14,13 +14,11 @@ export default function SignFormItens({ item, onInputChange }) {
     const handleInputChange = (text, index)=>{
         const newValues = [...inputValues];
         newValues[index] = text;
-        console.log("newValues(form)",newValues);
         setInputValues(newValues);
     };
 
 
     useEffect(() =>{
-        console.log("inputValues(Form): ",inputValues);
         onInputChange(inputValues);
     }, [inputValues])
 

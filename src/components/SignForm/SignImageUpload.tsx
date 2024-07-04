@@ -1,14 +1,13 @@
-import BtnC from '@/components/CustomButton';
-import * as S from '@/pages/SignUp/styles';
-import { useNavigation } from '@react-navigation/native';
 import { useState } from 'react';
 import { Alert, Image, TouchableOpacity, useWindowDimensions } from 'react-native';
 import { launchImageLibrary } from 'react-native-image-picker';
 import { useTheme } from 'styled-components/native';
+import { router } from 'expo-router';
+import BtnC from '@/components/CustomButton';
+import * as S from '../../../app/SignUp/styles';
 
 
 export default function SignImageUpload() {
-    const navigation = useNavigation();
     const [imageUri, setImageUri] = useState(null);
     const themeUse = useTheme();
     const { width } = useWindowDimensions()
@@ -54,7 +53,7 @@ export default function SignImageUpload() {
                     marginTop: 30,
                 }}
                 onPress={(event) => {
-                    navigation.navigate('Home' as never)
+                    router.replace('Home')
                 }}
             />
 
@@ -69,7 +68,7 @@ export default function SignImageUpload() {
                     borderColor: '#E96181',
                 }}
                 onPress={(event) => {
-                    navigation.navigate('Home ' as never)
+                    router.replace('Home')
                 }}
             />
 
