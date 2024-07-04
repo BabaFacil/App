@@ -1,21 +1,17 @@
 import React, { useRef } from 'react';
 import { Image, Text } from 'react-native';
 
-import * as Animatable from 'react-native-animatable';
-import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import { OpenSans_400Regular, OpenSans_700Bold, useFonts } from '@expo-google-fonts/open-sans';
 import { router } from 'expo-router';
-import { useNavigation } from '@react-navigation/native';
+import * as Animatable from 'react-native-animatable';
+import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import { Modalize } from 'react-native-modalize';
-import AsyncStorage from '@react-native-async-storage/async-storage';
 
-import * as S from './styles';
 import BtnC from '@/components/CustomButton';
+import * as S from './styles';
 
 
 export default function SignIn() {
-
-    const navigation = useNavigation();
     const modalLoginRef = useRef(null)
     const modalRegisterRef = useRef(null)
 

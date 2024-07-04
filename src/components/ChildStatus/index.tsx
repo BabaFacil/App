@@ -1,10 +1,10 @@
 import { OpenSans_400Regular, OpenSans_500Medium, OpenSans_700Bold, useFonts } from '@expo-google-fonts/open-sans';
 
-import { useNavigation } from '@react-navigation/native';
 import { useEffect, useState } from 'react';
 import { Animated, Text } from 'react-native';
 
 import * as S from './styles';
+import { router } from 'expo-router';
 
 interface baseProps {
     status: string;
@@ -24,7 +24,6 @@ type props = onlineProps | offlineProps;
 
 
 export default function ChildStatus({ status, babySitter }: props) {
-    const navigation = useNavigation();
     const opacityValue = useState(new Animated.Value(0.2))[0];
 
     let [fontsLoaded] = useFonts({
@@ -43,7 +42,7 @@ export default function ChildStatus({ status, babySitter }: props) {
     };
 
     const defaultText = {
-        "online": <S.StatusText>Está sendo cuidado pela babá: <S.StatusTextBold onPress={() => { navigation.navigate('Chat' as never) }}>{babySitter}</S.StatusTextBold></S.StatusText>,
+        "online": <S.StatusText>Está sendo cuidado pela babá: <S.StatusTextBold onPress={() => { router.push('Chat') }}>{babySitter}</S.StatusTextBold></S.StatusText>,
         "offline": <S.StatusText>Não está sendo cuidado por uma babá</S.StatusText>,
     }
 

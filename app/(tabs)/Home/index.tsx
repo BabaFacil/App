@@ -1,7 +1,6 @@
 
 import React, { useRef, useState } from 'react';
 
-import { useNavigation } from '@react-navigation/native';
 import { OpenSans_400Regular, OpenSans_500Medium, OpenSans_700Bold, useFonts } from '@expo-google-fonts/open-sans';
 import { MaterialIcons } from '@expo/vector-icons';
 import { EyeOff, Pencil, Trash2 } from 'lucide-react-native';
@@ -15,11 +14,10 @@ import ChildStatus from '@/components/ChildStatus';
 import KidCards from '@/components/KidCards';
 import { Separator } from '../PreChat/styles';
 import * as S from './styles';
+import { router } from 'expo-router';
 
 
 export default function Home() {
-
-  const navigation = useNavigation();
 
   const height = Dimensions.get('window').height
   const width = Dimensions.get('window').width
@@ -94,7 +92,7 @@ export default function Home() {
           }
         />
       </S.DockGlobal>
-      <S.AddBtn onPress={() => { navigation.navigate('RegisterChild' as never) }}>
+      <S.AddBtn onPress={() => { router.push('RegisterChild') }}>
         <Text style={{ fontSize: 25, color: '#fff' }}>+</Text>
       </S.AddBtn>
 

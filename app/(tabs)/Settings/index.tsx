@@ -1,19 +1,18 @@
+import React from 'react';
+import { Text } from 'react-native';
+
 import { OpenSans_400Regular, OpenSans_500Medium, OpenSans_700Bold, useFonts } from '@expo-google-fonts/open-sans';
 import { Ionicons, MaterialIcons } from '@expo/vector-icons';
-import { useNavigation } from '@react-navigation/native';
-import { ArrowLeft, BookA, ChevronRight, Flag, Info, LogOut, MessageSquareText, Moon, PieChart, Scale, Shield } from 'lucide-react-native';
-import React from 'react';
-import { Text, TouchableOpacity, View } from 'react-native';
-import { ThemeContext } from 'styled-components';
-import Card from '@/components/Card';
-import * as S from './styles';
-import { useTheme } from 'styled-components/native';
 import { router } from 'expo-router';
+import { BookA, ChevronRight, Flag, Info, LogOut, MessageSquareText, Moon, PieChart, Scale, Shield } from 'lucide-react-native';
+import { useTheme } from 'styled-components/native';
+
+import Card from '@/components/Card';
 import Header from '@/components/ui/Header/Header';
+import * as S from './styles';
 
 
 export default function Settings() {
-    const navigation = useNavigation();
     const theme = useTheme()
 
     let [fontsLoaded] = useFonts({

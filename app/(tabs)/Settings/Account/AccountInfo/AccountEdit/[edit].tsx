@@ -3,7 +3,6 @@ import { Text, TouchableOpacity, View } from 'react-native';
 
 import { router, useLocalSearchParams } from 'expo-router';
 import { OpenSans_400Regular, OpenSans_500Medium, OpenSans_700Bold, useFonts } from '@expo-google-fonts/open-sans';
-import { useNavigation, useRoute } from '@react-navigation/native';
 import { ArrowLeft, PencilLine } from 'lucide-react-native';
 import { useTheme } from 'styled-components/native';
 
@@ -15,7 +14,6 @@ import Header from '@/components/ui/Header/Header';
 // FIXME:  Warning: React has detected a change in the order of Hooks called.
 //         This will lead to bugs and errors if not fixed.
 export default function AccountEdit() {
-    const navigation = useNavigation();
     const themeUse = useTheme()
     const { title } = useLocalSearchParams<{ title: string }>()
 

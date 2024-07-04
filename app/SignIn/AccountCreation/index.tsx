@@ -1,12 +1,14 @@
-import BtnC from '@/components/CustomButton';
-import { OpenSans_400Regular, OpenSans_700Bold, useFonts } from '@expo-google-fonts/open-sans';
-import { Ionicons } from '@expo/vector-icons';
-import { useNavigation } from '@react-navigation/native';
 import React from 'react';
 import { Image, Text } from 'react-native';
+
+import { Ionicons } from '@expo/vector-icons';
+import { router } from 'expo-router';
+import BtnC from '@/components/CustomButton';
+import { OpenSans_400Regular, OpenSans_700Bold, useFonts } from '@expo-google-fonts/open-sans';
+
 import * as S from './styles';
+
 export default function AccountCreation() {
-  const navigation = useNavigation();
 
   let [fontsLoaded] = useFonts({
     OpenSans_400Regular,
@@ -20,7 +22,7 @@ export default function AccountCreation() {
   return (
     
     <S.Container>
-      <S.Return onPress={() => { navigation.navigate('SignIn' as never) }}>
+      <S.Return onPress={() => { router.replace('SignIn') }}>
         <Ionicons name="arrow-back" size={33} color="black" />
         <Text style={{ fontSize: 17 }}> Voltar</Text>
       </S.Return>
@@ -36,7 +38,7 @@ export default function AccountCreation() {
           buttonText='Cadastrar'
           btnColor='#E96181'
           colorText='#FFF'
-          onPress={() => { navigation.navigate('Home' as never) }}
+          onPress={() => { router.replace('Home') }}
         />
       </S.Form>
       <S.ContainerLogo>

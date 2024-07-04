@@ -1,14 +1,15 @@
-import { useNavigation } from '@react-navigation/native'
-import { ArrowLeft, FileImage} from 'lucide-react-native'
-import React, { useState } from 'react'
 import { View } from 'react-native'
+import React, { useState } from 'react'
+
+import { ArrowLeft, FileImage} from 'lucide-react-native'
 import { useTheme } from 'styled-components/native'
+import DateTimePicker from '@react-native-community/datetimepicker';
+import { router } from 'expo-router'
+
 import * as S from './styles'
 import BtnC from '@/components/CustomButton';
-import DateTimePicker from '@react-native-community/datetimepicker';
 
 export default function RegisterChild() {
-    const navigation = useNavigation()
     const [selected, setSelected] = useState("") 
     const [date, setDate] = useState(new Date())
     const [showPicker, setShowPicker] = useState(false)
@@ -28,7 +29,7 @@ export default function RegisterChild() {
     return(
         <>
            <S.Container>
-                <S.Return onPress={() => { navigation.navigate('Home' as never) }}>
+                <S.Return onPress={() => { router.replace('Home') }}>
                     <ArrowLeft strokeWidth={1} color={theme.COLORS.TEXT_PRIMARY} size={28} />
                     <S.ReturnText>Voltar</S.ReturnText>
                 </S.Return>

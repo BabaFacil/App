@@ -3,8 +3,6 @@ import { ArrowLeft, ChevronRight } from 'lucide-react-native';
 import React from 'react';
 import { Image, Text, TouchableOpacity, View } from 'react-native';
 
-import { useNavigation } from '@react-navigation/native';
-import { useTheme } from 'styled-components/native';
 
 import Card from "@/components/Card";
 import * as S from './styles';
@@ -12,9 +10,6 @@ import { router } from 'expo-router';
 import Header from '@/components/ui/Header/Header';
 
 export default function Account() {
-
-    const navigation = useNavigation();
-
 
     let [fontsLoaded] = useFonts({
         OpenSans_400Regular,

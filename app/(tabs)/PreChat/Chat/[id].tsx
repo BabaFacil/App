@@ -1,7 +1,6 @@
 import React from 'react'
 import { Image, TouchableOpacity, View } from 'react-native'
 
-import { useNavigation } from '@react-navigation/native'
 import { router, useLocalSearchParams } from 'expo-router'
 import { ArrowLeft, Camera, Phone, SendHorizontal, Video } from 'lucide-react-native'
 import { GestureHandlerRootView } from 'react-native-gesture-handler'
@@ -12,7 +11,6 @@ import DATA from '@/mocks/babysitterData.mock'
 import * as S from './styles'
 
 export default function Chat() {
-    const navigation = useNavigation();
     let theme = useTheme()
     const { id } = useLocalSearchParams<{id:string}>()
     const nannyPic = require('@/assets/imgs/baba1.png')

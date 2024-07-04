@@ -1,19 +1,18 @@
-import React, { useEffect, useRef, useState } from 'react'
-import { Animated, FlatList, View } from 'react-native'
-import { ThemeContext } from 'styled-components'
+import React, { useEffect, useRef, useState } from 'react';
+import { Animated, FlatList, View } from 'react-native';
+
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import { Check, ChevronRight } from 'lucide-react-native'
-import { GestureHandlerRootView, TouchableOpacity } from 'react-native-gesture-handler'
-import Paginator from '../ui/Paginator'
-import OnBoardingItem from './OnboardingItem'
-import slides from './slides'
-import { Container } from './styles'
-import { useNavigation } from '@react-navigation/native';
-import { useTheme } from 'styled-components/native';
 import { router } from 'expo-router';
+import { Check, ChevronRight } from 'lucide-react-native';
+import { GestureHandlerRootView, TouchableOpacity } from 'react-native-gesture-handler';
+import { useTheme } from 'styled-components/native';
+
+import Paginator from '../ui/Paginator';
+import OnBoardingItem from './OnboardingItem';
+import slides from './slides';
+import { Container } from './styles';
 
 export default function Onboarding() {
-    const navigation = useNavigation();
     const theme = useTheme()
 
     const [currentIndex, setCurrentIndex] = useState(0)
