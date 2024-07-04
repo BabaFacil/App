@@ -13,7 +13,6 @@ interface defaultProps{
 
 export default function Header({text, previousPage, additionalStyles}: defaultProps) {
     const theme = useTheme()
-    console.log(previousPage);
     
     return (
         <View style={{ flexDirection: 'row', marginTop: 40, alignItems: "center", ...additionalStyles }}>

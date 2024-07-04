@@ -25,7 +25,7 @@ export default function App() {
         setViewOnBoarding(false)
       }
     } catch (e) {
-      console.log(e);
+      throw new Error(e)
     } finally {
       setLoading(false)
     }

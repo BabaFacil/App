@@ -85,7 +85,6 @@ export default function SignIn() {
                         btnColor='#E96181'
                         colorText='#fff'
                         onPress={(event) => {
-                            console.log(event);
                             event.persist();
                             router.replace('/Home')
                         }}

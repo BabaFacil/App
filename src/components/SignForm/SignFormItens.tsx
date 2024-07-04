@@ -14,13 +14,11 @@ export default function SignFormItens({ item, onInputChange }) {
     const handleInputChange = (text, index)=>{
         const newValues = [...inputValues];
         newValues[index] = text;
-        console.log("newValues(form)",newValues);
         setInputValues(newValues);
     };
 
 
     useEffect(() =>{
-        console.log("inputValues(Form): ",inputValues);
         onInputChange(inputValues);
     }, [inputValues])
 

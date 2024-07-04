@@ -14,7 +14,6 @@ const ProgressBar = ({ currentBar, limitBar }) => {
     
     <S.Container>
       {Array.from({ length: limitBar }).map((_, index) => (
-        console.log("index:", index),
         
         <S.barSegment
           key={index}

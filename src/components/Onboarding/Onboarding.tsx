@@ -34,7 +34,7 @@ export default function Onboarding() {
                 router.replace('/SignIn')
                 return
             } catch (e) {
-                console.log(e);
+                throw new Error(e)
                 
             }
         }
