@@ -39,41 +39,6 @@ export default function TabLayout() {
           tabBarIcon: ({ color }) => <FontAwesome size={28} name="cog" color={color} />,
         }}
       />
-
-      {/*
-      Exclude routes.
-      This seems not to be the smartest way
-      */}
-      <Tabs.Screen
-        name="PreChat/Chat/[id]"
-        options={{
-          href: null,
-        }}
-      />
-      <Tabs.Screen
-        name="Settings/Account/index"
-        options={{
-          href: null,
-        }}
-      />
-      <Tabs.Screen
-        name="Settings/Account/AccountInfo/index"
-        options={{
-          href: null,
-        }}
-      />
-      <Tabs.Screen
-        name="Settings/Account/AccountInfo/AccountEdit/[edit]"
-        options={{
-          href: null,
-        }}
-      />
-      <Tabs.Screen
-        name="Settings/DarkModeSwitch/index"
-        options={{
-          href: null,
-        }}
-      />
     </Tabs>
   );
 }

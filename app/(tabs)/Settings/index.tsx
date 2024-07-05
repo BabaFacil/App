@@ -35,7 +35,7 @@ export default function Settings() {
                     <S.PrincipalText >Configurações e Privacidade</S.PrincipalText>
                     <Card title="Conta">
 
-                        <S.ButtonNav onPress={() => { router.push('./Account')}}>
+                        <S.ButtonNav onPress={() => { router.push('/Account')}}>
                             <S.Nav>
                                 <Text>
                                     <Ionicons name="person-sharp" color={theme.COLORS.ICON} size={16} />
@@ -78,7 +78,7 @@ export default function Settings() {
 
 
                     <Card title="Conteudo e Interface">
-                        <S.ButtonNav  onPress={() => { router.push('./DarkModeSwitch') }}>
+                        <S.ButtonNav  onPress={() => { router.push('/DarkModeSwitch') }}>
                             <S.Nav>
                                 <Text>
                                     <Moon strokeWidth={1} fill={theme.COLORS.ICON} color={theme.COLORS.ICON} size={16} />
