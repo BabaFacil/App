@@ -47,6 +47,8 @@ Abrir o programa e escanear QRcode, ou plugar celular no computador
 
 Para realizar o deploy, siga esses passos
 
+**Para fazer o deploy você precisa estar logado na conta EAS da empresa!**
+
 Gerar o .aab (subir para a Play Store):
 
 ```
