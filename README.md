@@ -42,3 +42,19 @@ a -> Android, caso estiver com celular plugado no computador
 Celular:
 
 Abrir o programa e escanear QRcode, ou plugar celular no computador
+
+## 🚀 Deploy
+
+Para realizar o deploy, siga esses passos
+
+Gerar o .aab (subir para a Play Store):
+
+```
+eas build -p android
+```
+
+Caso você queira gerar o .apk:
+
+```
+eas build -p android --profile preview
+```
