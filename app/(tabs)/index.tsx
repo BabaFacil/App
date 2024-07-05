@@ -12,8 +12,8 @@ import { useTheme } from 'styled-components/native';
 import childData from '@/mocks/childData.mocks';
 import ChildStatus from '@/components/ChildStatus';
 import KidCards from '@/components/KidCards';
-import { Separator } from '../PreChat/styles';
-import * as S from './styles';
+import { Separator } from './preChat';
+import * as S from './index';
 import { router } from 'expo-router';
 
 

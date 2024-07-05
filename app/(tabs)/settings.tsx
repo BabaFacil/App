@@ -9,7 +9,7 @@ import { useTheme } from 'styled-components/native';
 
 import Card from '@/components/Card';
 import Header from '@/components/ui/Header/Header';
-import * as S from './styles';
+import * as S from './settings';
 
 
 export default function Settings() {

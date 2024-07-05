@@ -12,28 +12,28 @@ export default function TabLayout() {
       }
     }}>
       <Tabs.Screen
-        name="Home/index"
+        name="index"
         options={{
           title: 'Home',
           tabBarIcon: ({ color }) => <FontAwesome size={28} name="home" color={color} />,
         }}
       />
       <Tabs.Screen
-        name="Activitys/index"
+        name="activitys"
         options={{
           title: 'Activitys',
           tabBarIcon: ({ color }) => <FontAwesome size={28} name="list-ul" color={color} />,
         }}
       />
       <Tabs.Screen
-        name="PreChat/index"
+        name="preChat"
         options={{
           title: 'Chat',
           tabBarIcon: ({ color }) => <FontAwesome size={28} name="wechat" color={color} />,
         }}
       />
       <Tabs.Screen
-        name="Settings/index"
+        name="settings"
         options={{
           title: 'Settings',
           tabBarIcon: ({ color }) => <FontAwesome size={28} name="cog" color={color} />,
