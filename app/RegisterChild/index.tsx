@@ -29,7 +29,7 @@ export default function RegisterChild() {
     return(
         <>
            <S.Container>
-                <S.Return onPress={() => { router.replace('Home') }}>
+                <S.Return onPress={() => { router.replace('home') }}>
                     <ArrowLeft strokeWidth={1} color={theme.COLORS.TEXT_PRIMARY} size={28} />
                     <S.ReturnText>Voltar</S.ReturnText>
                 </S.Return>

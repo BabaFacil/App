@@ -21,7 +21,7 @@ export default function Chat() {
         <S.Container>
             <View style={{ flex: 1, justifyContent: "space-between", flexDirection: 'column', marginTop: 40 }}>
                 <S.Header>
-                    <TouchableOpacity onPress={() => { router.replace('/PreChat') }}><ArrowLeft strokeWidth={1} color={theme.COLORS.TEXT_PRIMARY} size={28} /></TouchableOpacity>
+                    <TouchableOpacity onPress={() => { router.replace('/preChat') }}><ArrowLeft strokeWidth={1} color={theme.COLORS.TEXT_PRIMARY} size={28} /></TouchableOpacity>
                     <View style={{ flexDirection: 'row', alignItems: "center" }}>
                         <Image source={nannyPic} style={{ height: 32, width: 32, borderRadius: 90 }} />
                         <S.Name numberOfLines={1} ellipsizeMode="middle">{currentData.name}</S.Name>

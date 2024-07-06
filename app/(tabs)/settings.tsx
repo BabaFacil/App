@@ -29,7 +29,7 @@ export default function Settings() {
     return (
         <>
             <S.BackgoundContainer>
-                <Header previousPage='Home' text={"Configurações e Privacidade"} />
+                <Header previousPage='home' text={"Configurações e Privacidade"} />
 
                 <S.Container contentContainerStyle={{ paddingBottom: 200 }}>
                     <S.PrincipalText >Configurações e Privacidade</S.PrincipalText>

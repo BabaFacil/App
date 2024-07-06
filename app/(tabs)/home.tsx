@@ -13,7 +13,7 @@ import childData from '@/mocks/childData.mocks';
 import ChildStatus from '@/components/ChildStatus';
 import KidCards from '@/components/KidCards';
 import { Separator } from './preChat';
-import * as S from './index';
+import * as S from './home';
 import { router } from 'expo-router';
 
 

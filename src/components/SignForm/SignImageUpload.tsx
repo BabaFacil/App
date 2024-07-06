@@ -53,7 +53,7 @@ export default function SignImageUpload() {
                     marginTop: 30,
                 }}
                 onPress={(event) => {
-                    router.replace('Home')
+                    router.replace('/home')
                 }}
             />
 
@@ -68,7 +68,7 @@ export default function SignImageUpload() {
                     borderColor: '#E96181',
                 }}
                 onPress={(event) => {
-                    router.replace('Home')
+                    router.replace('/home')
                 }}
             />
 

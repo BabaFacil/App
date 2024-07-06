@@ -28,7 +28,7 @@ export default function Account() {
 
     return (
         <S.BackgoundContainer>
-                <Header previousPage='/Settings' text={"Configurações e Privacidade"}/>
+                <Header previousPage='/settings' text={"Configurações e Privacidade"}/>
             <S.Container>
                 <S.PrincipalText >Perfil</S.PrincipalText>
 

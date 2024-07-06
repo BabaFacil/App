@@ -47,7 +47,7 @@ export default function PreChat() {
                         data={DATA}
                         keyExtractor={(item:any) => item.id}
                         ItemSeparatorComponent={S.Separator}
-                        renderItem={({item}:any)=> <PreChatCard onPress={()=>{router.push(`./Chat/${item.id}`)}} name={item.name} lastMessage={item.lastMessage} lastMassageDate={item.lastMassageDate} photo={item.photo} isNewMessage={item.isNewMessage} newMsgCount={item.newMsgCount} sent={item.sent} isSender={item.isSender} />}
+                        renderItem={({item}:any)=> <PreChatCard onPress={()=>{router.push(`/Chat/${item.id}`)}} name={item.name} lastMessage={item.lastMessage} lastMassageDate={item.lastMassageDate} photo={item.photo} isNewMessage={item.isNewMessage} newMsgCount={item.newMsgCount} sent={item.sent} isSender={item.isSender} />}
                         />
                     </GestureHandlerRootView>
                 </S.DockGlobal>

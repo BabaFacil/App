@@ -43,7 +43,7 @@ const MenuBar = ({ TelaAtiva }:defaultProps) => {
                 <Text style={{ fontSize: 12 }}>Chat</Text>
             </TouchableOpacity>
 
-            <TouchableOpacity onPress={()=> router.replace('/Settings')} style={{ alignItems: 'center' }}>
+            <TouchableOpacity onPress={()=> router.replace('/settings')} style={{ alignItems: 'center' }}>
                 <FontAwesome name="user" size={23} color={TelaAtiva == 'config' ? '#E96181' : '#C8C8C8'} />
                 <Text style={{ fontSize: 12 }}>Config</Text>
             </TouchableOpacity>

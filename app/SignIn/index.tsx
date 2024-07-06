@@ -86,7 +86,7 @@ export default function SignIn() {
                         colorText='#fff'
                         onPress={(event) => {
                             event.persist();
-                            router.replace('/Home')
+                            router.replace('/home')
                         }}
                     />
                 </Modalize>
