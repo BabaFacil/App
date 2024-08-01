@@ -39,7 +39,7 @@ const MenuBar = ({ TelaAtiva }:defaultProps) => {
             </TouchableOpacity>
 
             <TouchableOpacity onPress={()=> router.replace('/PreChat')} style={{ alignItems: 'center' }}>
-                <FontAwesome name="wechat" size={23} color={TelaAtiva == 'prechat' ? '#E96181' : '#C8C8C8'} />
+                <FontAwesome name="wechat" size={23} color={TelaAtiva.includes('prechat') ? '#E96181' : '#C8C8C8'} />
                 <Text style={{ fontSize: 12 }}>Chat</Text>
             </TouchableOpacity>
 
