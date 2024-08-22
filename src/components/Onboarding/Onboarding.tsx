@@ -69,7 +69,7 @@ export default function Onboarding() {
                 />
             </View>
             <View style={{ paddingHorizontal: 20, width: "100%", justifyContent: "space-between", flexDirection: "row" }}>
-                <GestureHandlerRootView>
+                <GestureHandlerRootView style={{flex:0}}>
                     <TouchableOpacity style={{padding: 5}} onPress={scrollBackwards}>
                         <ChevronRight style={{
                             transform: [
@@ -79,7 +79,7 @@ export default function Onboarding() {
                     </TouchableOpacity>
                 </GestureHandlerRootView>
                 <Paginator data={slides} scrollX={scrollX} />
-                <GestureHandlerRootView>
+                <GestureHandlerRootView style={{flex:0}}>
                     <TouchableOpacity style={{padding: 5}} onPress={scrollTo}>
                         {currentIndex < slides.length - 1 ? <ChevronRight color={theme.COLORS.PRIMARY} size={32} /> : <Check color={theme.COLORS.PRIMARY} size={32} />}
                     </TouchableOpacity>

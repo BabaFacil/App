@@ -16,7 +16,7 @@ export default function Header({text, previousPage, additionalStyles}: defaultPr
     
     return (
         <View style={{ flexDirection: 'row', marginTop: 40, alignItems: "center", ...additionalStyles }}>
-            <GestureHandlerRootView>
+            <GestureHandlerRootView style={{flex:0}}>
                 <TouchableOpacity onPress={() => { router.push(previousPage || ".././") }}><ArrowLeft strokeWidth={1} style={{ marginLeft: 10 }} color={theme.COLORS.ICON} size={28} /></TouchableOpacity>
             </GestureHandlerRootView>
             {/* TODO: Fazer o texto aparecer quando o usuário rolar a página */}

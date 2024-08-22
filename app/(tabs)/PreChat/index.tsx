@@ -32,7 +32,7 @@ export default function PreChat() {
                             <S.Name>Mensagens</S.Name>
                         </View>
                         <View style={{ flexDirection: 'row', alignItems: "center" }}>
-                            <GestureHandlerRootView>
+                            <GestureHandlerRootView style={{flex:0}}>
                                 <TouchableOpacity>
                                     <Search color={theme.COLORS.TEXT_PRIMARY} />
                                 </TouchableOpacity>
@@ -41,7 +41,7 @@ export default function PreChat() {
                     </S.Header>
                 </View>
                 <S.DockGlobal>
-                    <GestureHandlerRootView>
+                    <GestureHandlerRootView style={{flex:0}}>
                         <S.MessagesContainer
                         contentContainerStyle={{ flexGrow: 1, paddingBottom: 200 }}
                         data={DATA}

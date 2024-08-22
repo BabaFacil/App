@@ -46,7 +46,7 @@ export default function DarkModeSwitch() {
                             <S.Nav>
                                 <S.Text>Trocar para o tema {theme === "dark" ? "claro" : "escuro"}</S.Text>
                             </S.Nav>
-                            <GestureHandlerRootView>
+                            <GestureHandlerRootView style={{flex:0}}>
                                 <Switch value={isDarkMode} onValueChange={toggleTheme} />
                             </GestureHandlerRootView>
                         </S.ButtonNav>

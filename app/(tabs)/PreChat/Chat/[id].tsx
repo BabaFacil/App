@@ -35,7 +35,7 @@ export default function Chat() {
                         </TouchableOpacity>
                     </View>
                 </S.Header>
-                <GestureHandlerRootView>
+                <GestureHandlerRootView style={{flex:0}}>
 
                     <S.MessagesContainer automaticallyAdjustKeyboardInsets={true}>
                         {/* THIS IS AN EXAMPLE OF A STATIC USAGE! */}
